@@ -2,11 +2,11 @@
 Yoga-SwiftUI is a powerful layout library for SwiftUI which brings Facebook's Yoga flexbox implementation to SwiftUI. It offers a simple API to apply flexbox-based layout in your SwiftUI apps.
 
 ## Features
-Support for iOS (16+), macOS (13+), watchOS (9+)
-A thin wrapper around Yoga, a cross-platform layout library from Facebook, bringing flexbox to SwiftUI
-Nesting of Flex views within one another to build complex layouts
-Full compatibility with Figma's auto layout, empowering Figma plugin creators to generate flexbox code. It supports all properties including row gap and column gap in flexbox.
-Supports a wide array of layout customization like justifyContent, alignItems, alignSelf, flexDirection, flexWrap, flexGrow, flexShrink and more
+- Support for iOS (16+), macOS (13+), watchOS (9+) using SwiftUI [custom layout](https://developer.apple.com/documentation/swiftui/composing_custom_layouts_with_swiftui).
+- A thin wrapper around Yoga, a cross-platform layout library from Facebook, bringing flexbox to SwiftUI
+- Nesting of Flex views within one another to build complex layouts
+- Full compatibility with Figma's auto layout, empowering Figma plugin creators to generate flexbox code. It supports all properties including row gap and column gap in flexbox.
+- Supports a wide array of layout customization like justifyContent, alignItems, alignSelf, flexDirection, flexWrap, flexGrow, flexShrink and more
 
 ## Usage
 You can easily create a Flex container and add child views to it.

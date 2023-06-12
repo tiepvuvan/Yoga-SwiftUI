@@ -55,7 +55,7 @@ In the above example, we use the modifiers provided by the library to customize 
 Yoga-SwiftUI is available as a Swift Package Manager package. You can add it to your project from Xcode's "Swift Packages" option in the File menu.
 
 ```
-.package(url: "https://github.com/YOUR_GITHUB_USERNAME/Yoga-SwiftUI.git", from: "1.0.0")
+.package(url: "https://github.com/tiepvuvan/Yoga-SwiftUI.git", from: "1.0.0")
 ```
 
 ## Contributing

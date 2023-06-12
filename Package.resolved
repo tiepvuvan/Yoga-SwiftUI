@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "yoga",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tiepvuvan/yoga",
+      "state" : {
+        "branch" : "main",
+        "revision" : "10f985ad94f6b24ec701f80168e02550ec30c222"
+      }
+    }
+  ],
+  "version" : 2
+}

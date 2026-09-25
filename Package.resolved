@@ -1,14 +1,15 @@
 {
+  "originHash" : "3721f7c0e8302b2fce9e4aecf532dbee534d142e2794c6e19640c1ad2b92eb79",
   "pins" : [
     {
       "identity" : "yoga",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/tiepvuvan/yoga",
+      "location" : "https://github.com/react/yoga.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "10f985ad94f6b24ec701f80168e02550ec30c222"
+        "revision" : "042f5013152eb81c1552dec945b88f7b95ca350f",
+        "version" : "3.2.1"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

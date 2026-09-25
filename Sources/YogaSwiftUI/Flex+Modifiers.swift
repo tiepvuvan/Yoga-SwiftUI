@@ -1,148 +1,125 @@
-//
-//  File.swift
-//  
-//
-//  Created by Peter Vu on 11/06/2023.
-//
-
-import Yoga
 import SwiftUI
-
-public struct JustifyContentLayoutValueKey: LayoutValueKey {
-    public typealias Value = YGJustify
-    public static var defaultValue: Value = .flexStart
-}
+import YogaBridge
 
 public extension View {
-    func justifyContent(_ value: YGJustify) -> some View {
-        return layoutValue(key: JustifyContentLayoutValueKey.self, value: value)
+    /// Overrides the cross-axis alignment of this direct `Flex` child.
+    func flexAlignSelf(_ value: YGAlign) -> some View {
+        layoutValue(key: FlexItemValueKey<AlignSelfProperty>.self, value: value)
     }
 
-    func alignItems(_ value: YGAlign) -> some View {
-        return layoutValue(key: AlignItemLayoutValueKey.self, value: value)
+    /// Sets the initial size of this item along its parent's main axis.
+    func flexBasis(_ value: YogaDimension) -> some View {
+        layoutValue(key: FlexItemValueKey<BasisProperty>.self, value: value)
     }
 
-    func alignSelf(_ value: YGAlign) -> some View {
-        return layoutValue(key: AlignSelfLayoutValueKey.self, value: value)
-    }
-
-    func flexDirection(_ value: YGFlexDirection) -> some View {
-        return layoutValue(key: FlexDirectionLayoutValueKey.self, value: value)
-    }
-
-    func flexWrap(_ value: YGWrap) -> some View {
-        return layoutValue(key: FlexWrapLayoutValueKey.self, value: value)
-    }
-
+    /// Compatibility overload for Yoga's C value type.
     func flexBasis(_ value: YGValue) -> some View {
-        return layoutValue(key: FlexBasisLayoutValueKey.self, value: value)
+        let dimension: YogaDimension
+        switch value.unit {
+        case .point: dimension = .point(value.value)
+        case .percent: dimension = .percent(value.value)
+        default: dimension = .auto
+        }
+        return flexBasis(dimension)
     }
 
+    /// Sets this item's share of remaining space.
     func flexGrow(_ value: CGFloat) -> some View {
-        return layoutValue(key: FlexGrowLayoutValueKey.self, value: value)
+        layoutValue(key: FlexItemValueKey<GrowProperty>.self, value: Float(value))
     }
 
+    /// Sets this item's share of a space shortage.
     func flexShrink(_ value: CGFloat) -> some View {
-        return layoutValue(key: FlexShrinkLayoutValueKey.self, value: value)
+        layoutValue(key: FlexItemValueKey<ShrinkProperty>.self, value: Float(value))
     }
-    
-    func width(_ dimension: YogaDimension) -> some View {
-        return layoutValue(key: WidthLayoutValueKey.self, value: dimension)
+
+    /// Sets Yoga's nonstandard `flex` shorthand on this item.
+    func flexFactor(_ value: CGFloat) -> some View {
+        layoutValue(key: FlexItemValueKey<FactorProperty>.self, value: Float(value))
     }
-    
-    func maxWidth(_ dimension: YogaDimension) -> some View {
-        return layoutValue(key: MaxWidthLayoutValueKey.self, value: dimension)
+
+    /// Sets this item's Yoga width.
+    func flexWidth(_ value: YogaDimension) -> some View {
+        layoutValue(key: FlexItemValueKey<WidthProperty>.self, value: value)
     }
-    
-    func minWidth(_ dimension: YogaDimension) -> some View {
-        return layoutValue(key: MinWidthLayoutValueKey.self, value: dimension)
+
+    /// Sets this item's Yoga height.
+    func flexHeight(_ value: YogaDimension) -> some View {
+        layoutValue(key: FlexItemValueKey<HeightProperty>.self, value: value)
     }
-    
-    func height(_ dimension: YogaDimension) -> some View {
-        return layoutValue(key: HeightLayoutValueKey.self, value: dimension)
+
+    /// Sets this item's minimum Yoga width.
+    func flexMinWidth(_ value: YogaDimension) -> some View {
+        layoutValue(key: FlexItemValueKey<MinWidthProperty>.self, value: value)
     }
-    
-    func maxHeight(_ dimension: YogaDimension) -> some View {
-        return layoutValue(key: MaxHeightLayoutValueKey.self, value: dimension)
+
+    /// Sets this item's maximum Yoga width.
+    func flexMaxWidth(_ value: YogaDimension) -> some View {
+        layoutValue(key: FlexItemValueKey<MaxWidthProperty>.self, value: value)
     }
-    
-    func minHeight(_ dimension: YogaDimension) -> some View {
-        return layoutValue(key: MinHeightLayoutValueKey.self, value: dimension)
+
+    /// Sets this item's minimum Yoga height.
+    func flexMinHeight(_ value: YogaDimension) -> some View {
+        layoutValue(key: FlexItemValueKey<MinHeightProperty>.self, value: value)
     }
-}
 
-public struct AlignContentLayoutValueKey: LayoutValueKey {
-    public typealias Value = YGAlign
-    public static var defaultValue: Value = .flexStart
-}
+    /// Sets this item's maximum Yoga height.
+    func flexMaxHeight(_ value: YogaDimension) -> some View {
+        layoutValue(key: FlexItemValueKey<MaxHeightProperty>.self, value: value)
+    }
 
-public struct AlignItemLayoutValueKey: LayoutValueKey {
-    public typealias Value = YGAlign
-    public static var defaultValue: Value = .stretch
-}
+    /// Sets the item's width-to-height ratio.
+    func flexAspectRatio(_ value: CGFloat) -> some View {
+        layoutValue(key: FlexItemValueKey<AspectRatioProperty>.self, value: Float(value))
+    }
 
-public struct AlignSelfLayoutValueKey: LayoutValueKey {
-    public typealias Value = YGAlign
-    public static var defaultValue: Value = .auto
-}
+    /// Sets absolute, relative, or static Yoga positioning for this item.
+    func flexPositionType(_ value: YGPositionType) -> some View {
+        layoutValue(key: FlexItemValueKey<PositionTypeProperty>.self, value: value)
+    }
 
-public struct FlexDirectionLayoutValueKey: LayoutValueKey {
-    public typealias Value = YGFlexDirection
-    public static var defaultValue: YGFlexDirection = .row
-}
+    /// Overrides the direction used for logical edges on this item.
+    func flexLayoutDirection(_ value: YGDirection) -> some View {
+        layoutValue(key: FlexItemValueKey<LayoutDirectionProperty>.self, value: value)
+    }
 
-public struct FlexWrapLayoutValueKey: LayoutValueKey {
-    public typealias Value = YGWrap
-    public static var defaultValue: YGWrap = .noWrap
-}
+    /// Controls whether this item participates in Yoga layout.
+    func flexDisplay(_ value: YGDisplay) -> some View {
+        layoutValue(key: FlexItemValueKey<DisplayProperty>.self, value: value)
+    }
 
-public struct FlexBasisLayoutValueKey: LayoutValueKey {
-    public typealias Value = YGValue
-    public static var defaultValue: YGValue = .init(value: 1, unit: .auto)
-}
+    /// Controls Yoga overflow for this item. Hidden overflow clips its SwiftUI content.
+    @ViewBuilder
+    func flexOverflow(_ value: YGOverflow) -> some View {
+        if value == .hidden {
+            clipped().layoutValue(key: FlexItemValueKey<OverflowProperty>.self, value: value)
+        } else {
+            layoutValue(key: FlexItemValueKey<OverflowProperty>.self, value: value)
+        }
+    }
 
-public struct FlexGrowLayoutValueKey: LayoutValueKey {
-    public typealias Value = CGFloat
-    public static var defaultValue: CGFloat = 0
-}
+    /// Chooses whether the item's dimensions include padding and border.
+    func flexBoxSizing(_ value: YGBoxSizing) -> some View {
+        layoutValue(key: FlexItemValueKey<BoxSizingProperty>.self, value: value)
+    }
 
-public struct FlexShrinkLayoutValueKey: LayoutValueKey {
-    public typealias Value = CGFloat
-    public static var defaultValue: CGFloat = 1
-}
+    /// Sets an inset for this item's Yoga position.
+    func flexPosition(_ value: YogaDimension, for edge: YGEdge) -> some View {
+        flexEdgeValue(value, for: edge, category: PositionCategory.self)
+    }
 
-public struct WidthLayoutValueKey: LayoutValueKey {
-    public typealias Value = YogaDimension
-    public static var defaultValue: YogaDimension = .auto
-}
+    /// Sets a Yoga margin on this item.
+    func flexMargin(_ value: YogaDimension, for edge: YGEdge = .all) -> some View {
+        flexEdgeValue(value, for: edge, category: MarginCategory.self)
+    }
 
-public struct MaxWidthLayoutValueKey: LayoutValueKey {
-    public typealias Value = YogaDimension
-    public static var defaultValue: YogaDimension = .auto
-}
+    /// Sets Yoga padding inside this item's box.
+    func flexPadding(_ value: YogaDimension, for edge: YGEdge = .all) -> some View {
+        flexEdgeValue(value, for: edge, category: PaddingCategory.self)
+    }
 
-public struct MinWidthLayoutValueKey: LayoutValueKey {
-    public typealias Value = YogaDimension
-    public static var defaultValue: YogaDimension = .auto
-}
-
-public struct HeightLayoutValueKey: LayoutValueKey {
-    public typealias Value = YogaDimension
-    public static var defaultValue: YogaDimension = .auto
-}
-
-public struct MaxHeightLayoutValueKey: LayoutValueKey {
-    public typealias Value = YogaDimension
-    public static var defaultValue: YogaDimension = .auto
-}
-
-public struct MinHeightLayoutValueKey: LayoutValueKey {
-    public typealias Value = YogaDimension
-    public static var defaultValue: YogaDimension = .auto
-}
-
-public enum YogaDimension {
-    case auto
-    case percent(Float) // 0...1
-    case point(Float)
+    /// Reserves Yoga border width on this item. Draw the border with SwiftUI.
+    func flexBorder(_ width: CGFloat, for edge: YGEdge = .all) -> some View {
+        flexEdgeValue(Float(width), for: edge, category: BorderCategory.self)
+    }
 }

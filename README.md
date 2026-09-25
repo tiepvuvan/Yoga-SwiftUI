@@ -1,12 +1,15 @@
 # Yoga-SwiftUI
 
+[![Swift version compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Ftiepvuvan%2FYoga-SwiftUI%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/tiepvuvan/Yoga-SwiftUI)
+[![Platform compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Ftiepvuvan%2FYoga-SwiftUI%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/tiepvuvan/Yoga-SwiftUI)
+
 Flexbox layout for SwiftUI, powered by the [official Yoga engine](https://github.com/react/yoga).
 
 Yoga-SwiftUI gives SwiftUI views Yoga's layout rules while SwiftUI continues to measure and render their content. Configure a `Flex` container with initializer options and `yoga...` modifiers. Configure its direct children with `flex...` modifiers.
 
 ## At a glance
 
-- **SwiftUI native:** a custom `Layout` for iOS 16+, macOS 13+, and watchOS 9+.
+- **SwiftUI native:** a custom `Layout` for iOS 16+, macOS 13+, tvOS 16+, watchOS 9+, and visionOS 1+.
 - **Official Yoga dependency:** pinned to the upstream 3.2.1 release.
 - **Broad Yoga style coverage:** direction, wrapping, alignment, grow/shrink/basis, dimensions, edges, positioning, display, overflow, and box sizing, without constructing a style object.
 - **Swift 6:** uses Swift/C++ interoperability and a C++20 toolchain.

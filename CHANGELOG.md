@@ -10,3 +10,4 @@
 - Release Yoga nodes and configuration with the layout cache, and recalculate placement for the actual bounds.
 - Correct percentage usage to Yoga's 0–100 scale.
 - Add DocC guides, generated API documentation, and Swift Package Index hosting configuration.
+- Declare tvOS 16+ and visionOS 1+ support, and display Swift Package Index compatibility badges.

@@ -4,7 +4,7 @@ Install Yoga-SwiftUI and make your first flex layout.
 
 ## Requirements
 
-Yoga-SwiftUI 2.0 supports iOS 16+, macOS 13+, and watchOS 9+. It requires Swift 6 and a C++20-capable toolchain. Each client target that imports or depends on `YogaSwiftUI` must enable Swift/C++ interoperability.
+Yoga-SwiftUI 2.0 supports iOS 16+, macOS 13+, tvOS 16+, watchOS 9+, and visionOS 1+. It requires Swift 6 and a C++20-capable toolchain. Each client target that imports or depends on `YogaSwiftUI` must enable Swift/C++ interoperability.
 
 ## Add the package
 

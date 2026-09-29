@@ -2,11 +2,13 @@
 
 Update the dependency, enable C++ interoperability, and review percentage values.
 
+> Note: This historical guide describes the v1-to-v2 changes. For a current upgrade, apply the modifier and percentage changes below, then follow <doc:MigratingTo3> for the native engine and Swift 6.4.
+
 ## Dependency and toolchain
 
 Version 2 replaces the `tiepvuvan/yoga` fork with the official `react/yoga` 3.2.1 release. The package requires Swift 6 and compiles Yoga with C++20.
 
-Enable `.interoperabilityMode(.Cxx)` on each SwiftPM target that imports or depends on `YogaSwiftUI`. For an Xcode app target, choose **C++ / Objective-C++** for **C++ and Objective-C Interoperability**. See <doc:GettingStarted> for the complete manifest example.
+Enable `.interoperabilityMode(.Cxx)` on each SwiftPM target that imports or depends on `YogaSwiftUI`. For an Xcode app target, choose **C++ / Objective-C++** for **C++ and Objective-C Interoperability**.
 
 ## Percentage values
 

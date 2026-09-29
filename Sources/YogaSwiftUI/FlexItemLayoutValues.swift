@@ -1,5 +1,5 @@
 import SwiftUI
-import YogaBridge
+import Yoga
 
 protocol FlexItemProperty {
     associatedtype Value
@@ -11,7 +11,7 @@ struct FlexItemValueKey<Property: FlexItemProperty>: LayoutValueKey {
 }
 
 enum AlignSelfProperty: FlexItemProperty {
-    static func apply(_ value: YGAlign, to style: inout YogaStyle) { style.alignSelf = value }
+    static func apply(_ value: YogaAlign, to style: inout YogaStyle) { style.alignSelf = value }
 }
 
 enum BasisProperty: FlexItemProperty {
@@ -59,23 +59,23 @@ enum AspectRatioProperty: FlexItemProperty {
 }
 
 enum PositionTypeProperty: FlexItemProperty {
-    static func apply(_ value: YGPositionType, to style: inout YogaStyle) { style.positionType = value }
+    static func apply(_ value: YogaPositionType, to style: inout YogaStyle) { style.positionType = value }
 }
 
 enum LayoutDirectionProperty: FlexItemProperty {
-    static func apply(_ value: YGDirection, to style: inout YogaStyle) { style.direction = value }
+    static func apply(_ value: YogaDirection, to style: inout YogaStyle) { style.direction = value }
 }
 
 enum DisplayProperty: FlexItemProperty {
-    static func apply(_ value: YGDisplay, to style: inout YogaStyle) { style.display = value }
+    static func apply(_ value: YogaDisplay, to style: inout YogaStyle) { style.display = value }
 }
 
 enum OverflowProperty: FlexItemProperty {
-    static func apply(_ value: YGOverflow, to style: inout YogaStyle) { style.overflow = value }
+    static func apply(_ value: YogaOverflow, to style: inout YogaStyle) { style.overflow = value }
 }
 
 enum BoxSizingProperty: FlexItemProperty {
-    static func apply(_ value: YGBoxSizing, to style: inout YogaStyle) { style.boxSizing = value }
+    static func apply(_ value: YogaBoxSizing, to style: inout YogaStyle) { style.boxSizing = value }
 }
 
 extension YogaStyle {

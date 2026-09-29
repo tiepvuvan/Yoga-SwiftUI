@@ -3,7 +3,7 @@ import YogaSwiftUI
 import XCTest
 
 final class PublicAPITests: XCTestCase {
-    @MainActor func testPublicModifiersCompileWithoutImportingYogaBridge() {
+    @MainActor func testPublicModifiersCompileWithoutImportingCore() {
         let view = Flex(direction: .row, justifyContent: .center) {
             Text("Child")
                 .flexWidth(.percent(50))

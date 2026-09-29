@@ -4,7 +4,7 @@ Build flexbox layouts in SwiftUI with Yoga.
 
 ## Overview
 
-`Flex` is a SwiftUI layout container backed by [Yoga](https://github.com/react/yoga). It gives you Yoga's flex direction, wrapping, alignment, growth, spacing, sizing, and positioning while letting SwiftUI measure and draw each view.
+`Flex` is a SwiftUI layout container backed by a native Swift port of [Yoga 3.2.1](https://github.com/react/yoga/tree/v3.2.1). It gives you Yoga's flex direction, wrapping, alignment, growth, spacing, sizing, and positioning while letting SwiftUI measure and draw each view.
 
 Start with the convenience initializer for common rows and columns. Use `yoga...` modifiers on the container and `flex...` modifiers on its direct children for the rest of Yoga's layout properties.
 
@@ -15,7 +15,7 @@ Flex(direction: .row, justifyContent: .spaceBetween, alignItems: .center) {
 }
 ```
 
-Yoga-SwiftUI requires Swift 6 and C++ interoperability. See <doc:GettingStarted> before adding it to an app.
+Yoga-SwiftUI requires Swift 6.4. The separate `Yoga` product provides the same engine without SwiftUI. See <doc:GettingStarted> before adding it to an app.
 
 ## Topics
 
@@ -33,6 +33,7 @@ Yoga-SwiftUI requires Swift 6 and C++ interoperability. See <doc:GettingStarted>
 
 ### Upgrade and reference
 
+- <doc:MigratingTo3>
 - <doc:MigratingTo2>
 - ``Flex``
 - ``YogaDimension``

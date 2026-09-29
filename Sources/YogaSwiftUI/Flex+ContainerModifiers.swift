@@ -1,39 +1,39 @@
 import SwiftUI
-import YogaBridge
+public import Yoga
 
 public extension Flex {
     /// Overrides the layout direction inherited from SwiftUI.
-    func yogaLayoutDirection(_ value: YGDirection) -> Self {
+    func yogaLayoutDirection(_ value: YogaDirection) -> Self {
         updating { $0.direction = value }
     }
 
     /// Changes the main axis of this container.
-    func yogaFlexDirection(_ value: YGFlexDirection) -> Self {
+    func yogaFlexDirection(_ value: YogaFlexDirection) -> Self {
         updating { $0.flexDirection = value }
     }
 
     /// Distributes children along the main axis.
-    func yogaJustifyContent(_ value: YGJustify) -> Self {
+    func yogaJustifyContent(_ value: YogaJustify) -> Self {
         updating { $0.justifyContent = value }
     }
 
     /// Aligns children across the main axis.
-    func yogaAlignItems(_ value: YGAlign) -> Self {
+    func yogaAlignItems(_ value: YogaAlign) -> Self {
         updating { $0.alignItems = value }
     }
 
     /// Distributes wrapped lines across the cross axis.
-    func yogaAlignContent(_ value: YGAlign) -> Self {
+    func yogaAlignContent(_ value: YogaAlign) -> Self {
         updating { $0.alignContent = value }
     }
 
     /// Controls whether children wrap onto additional lines.
-    func yogaWrap(_ value: YGWrap) -> Self {
+    func yogaWrap(_ value: YogaWrap) -> Self {
         updating { $0.wrap = value }
     }
 
     /// Sets a point or percentage gap between children or lines.
-    func yogaGap(_ value: YogaDimension, for gutter: YGGutter = .all) -> Self {
+    func yogaGap(_ value: YogaDimension, for gutter: YogaGutter = .all) -> Self {
         updating {
             if gutter == .all {
                 $0.setGap(value, for: .row)
@@ -45,12 +45,12 @@ public extension Flex {
     }
 
     /// Sets padding inside the Yoga container.
-    func yogaPadding(_ value: YogaDimension, for edge: YGEdge = .all) -> Self {
+    func yogaPadding(_ value: YogaDimension, for edge: YogaEdge = .all) -> Self {
         updating { $0.setPadding(value, for: edge) }
     }
 
     /// Reserves a border width in Yoga layout. Draw the border with SwiftUI.
-    func yogaBorder(_ width: CGFloat, for edge: YGEdge = .all) -> Self {
+    func yogaBorder(_ width: CGFloat, for edge: YogaEdge = .all) -> Self {
         updating { $0.setBorder(Float(width), for: edge) }
     }
 
@@ -85,17 +85,17 @@ public extension Flex {
     }
 
     /// Controls Yoga overflow. Hidden overflow also clips this SwiftUI view.
-    func yogaOverflow(_ value: YGOverflow) -> Self {
+    func yogaOverflow(_ value: YogaOverflow) -> Self {
         updating { $0.overflow = value }
     }
 
     /// Controls participation of this container's Yoga root in layout.
-    func yogaDisplay(_ value: YGDisplay) -> Self {
+    func yogaDisplay(_ value: YogaDisplay) -> Self {
         updating { $0.display = value }
     }
 
     /// Chooses whether dimensions include padding and border.
-    func yogaBoxSizing(_ value: YGBoxSizing) -> Self {
+    func yogaBoxSizing(_ value: YogaBoxSizing) -> Self {
         updating { $0.boxSizing = value }
     }
 

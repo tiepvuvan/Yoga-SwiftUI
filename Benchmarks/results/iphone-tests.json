@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "tests": 38,
+  "passed_tests": 38,
+  "configuration": "Release",
+  "date": "2026-09-29T09:43:00.547943+00:00",
+  "result_bundle": ".build/device-tests/fdc9f00884bddb99/release/20260929T094234Z.xcresult",
+  "source_sha256": "fdc9f00884bddb991c797da615d43b15ad9489cdbfe71eed33273beea4139f22",
+  "core_source_sha256": "0698f0133a28c84591a0d16fe6eb0f1596c8e01b0cff04591513a445a11e808e",
+  "device": "iPhone 16 Pro",
+  "os": "27.0",
+  "upstream_fixtures_per_api": 531,
+  "upstream_geometry_assertions": 31712,
+  "address_sanitizer": {
+    "passed": true,
+    "tests": 38,
+    "passed_tests": 38,
+    "configuration": "Debug",
+    "date": "2026-09-29T09:43:18.759113+00:00",
+    "result_bundle": ".build/device-tests/fdc9f00884bddb99/asan/20260929T094300Z.xcresult"
+  }
+}

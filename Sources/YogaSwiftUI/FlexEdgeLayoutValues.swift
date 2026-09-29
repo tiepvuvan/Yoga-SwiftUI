@@ -1,48 +1,48 @@
 import SwiftUI
-import YogaBridge
+import Yoga
 
 protocol FlexEdgeCategory {
     associatedtype Value
-    static func apply(_ value: Value, to style: inout YogaStyle, edge: YGEdge)
+    static func apply(_ value: Value, to style: inout YogaStyle, edge: YogaEdge)
 }
 
 enum PositionCategory: FlexEdgeCategory {
-    static func apply(_ value: YogaDimension, to style: inout YogaStyle, edge: YGEdge) {
+    static func apply(_ value: YogaDimension, to style: inout YogaStyle, edge: YogaEdge) {
         style.setPosition(value, for: edge)
     }
 }
 
 enum MarginCategory: FlexEdgeCategory {
-    static func apply(_ value: YogaDimension, to style: inout YogaStyle, edge: YGEdge) {
+    static func apply(_ value: YogaDimension, to style: inout YogaStyle, edge: YogaEdge) {
         style.setMargin(value, for: edge)
     }
 }
 
 enum PaddingCategory: FlexEdgeCategory {
-    static func apply(_ value: YogaDimension, to style: inout YogaStyle, edge: YGEdge) {
+    static func apply(_ value: YogaDimension, to style: inout YogaStyle, edge: YogaEdge) {
         style.setPadding(value, for: edge)
     }
 }
 
 enum BorderCategory: FlexEdgeCategory {
-    static func apply(_ value: Float, to style: inout YogaStyle, edge: YGEdge) {
+    static func apply(_ value: Float, to style: inout YogaStyle, edge: YogaEdge) {
         style.setBorder(value, for: edge)
     }
 }
 
 protocol FlexEdgeTag {
-    static var value: YGEdge { get }
+    static var value: YogaEdge { get }
 }
 
-enum LeftEdge: FlexEdgeTag { static let value: YGEdge = .left }
-enum TopEdge: FlexEdgeTag { static let value: YGEdge = .top }
-enum RightEdge: FlexEdgeTag { static let value: YGEdge = .right }
-enum BottomEdge: FlexEdgeTag { static let value: YGEdge = .bottom }
-enum StartEdge: FlexEdgeTag { static let value: YGEdge = .start }
-enum EndEdge: FlexEdgeTag { static let value: YGEdge = .end }
-enum HorizontalEdge: FlexEdgeTag { static let value: YGEdge = .horizontal }
-enum VerticalEdge: FlexEdgeTag { static let value: YGEdge = .vertical }
-enum AllEdge: FlexEdgeTag { static let value: YGEdge = .all }
+enum LeftEdge: FlexEdgeTag { static let value: YogaEdge = .left }
+enum TopEdge: FlexEdgeTag { static let value: YogaEdge = .top }
+enum RightEdge: FlexEdgeTag { static let value: YogaEdge = .right }
+enum BottomEdge: FlexEdgeTag { static let value: YogaEdge = .bottom }
+enum StartEdge: FlexEdgeTag { static let value: YogaEdge = .start }
+enum EndEdge: FlexEdgeTag { static let value: YogaEdge = .end }
+enum HorizontalEdge: FlexEdgeTag { static let value: YogaEdge = .horizontal }
+enum VerticalEdge: FlexEdgeTag { static let value: YogaEdge = .vertical }
+enum AllEdge: FlexEdgeTag { static let value: YogaEdge = .all }
 
 struct FlexEdgeValueKey<Category: FlexEdgeCategory, Edge: FlexEdgeTag>: LayoutValueKey {
     static var defaultValue: Category.Value? { nil }
@@ -52,7 +52,7 @@ extension View {
     @ViewBuilder
     func flexEdgeValue<Category: FlexEdgeCategory>(
         _ value: Category.Value,
-        for edge: YGEdge,
+        for edge: YogaEdge,
         category: Category.Type
     ) -> some View {
         switch edge {
@@ -65,7 +65,6 @@ extension View {
         case .horizontal: layoutValue(key: FlexEdgeValueKey<Category, HorizontalEdge>.self, value: value)
         case .vertical: layoutValue(key: FlexEdgeValueKey<Category, VerticalEdge>.self, value: value)
         case .all: layoutValue(key: FlexEdgeValueKey<Category, AllEdge>.self, value: value)
-        default: self
         }
     }
 }

@@ -31,3 +31,9 @@ Yoga controls layout geometry, not every visual behavior:
 - Yoga's `display: .contents` cannot flatten arbitrary descendants of an opaque SwiftUI child.
 
 A `Flex` uses SwiftUI's layout direction unless `yogaLayoutDirection(_:)` overrides it. A direct child can override the direction used for its logical edges with `flexLayoutDirection(_:)`. For exact behavior of each Yoga property, see the [Yoga documentation](https://www.yogalayout.dev/docs/styling/).
+
+## Native tree reuse in version 3
+
+The layout cache owns a native `YogaTree` and retains lightweight node identifiers and measurement contexts between size proposals and placement. SwiftUI cache updates invalidate affected measurements, and changed styles invalidate their nodes and ancestors. The placement pass recalculates for the actual bounds and can reuse compatible results. No individual `YogaNode` object is needed for each SwiftUI child.
+
+The production targets contain no C++ sources, bridge module, or external Yoga dependency. Use the separate `Yoga` product when your application needs a single nested layout tree independent of SwiftUI.

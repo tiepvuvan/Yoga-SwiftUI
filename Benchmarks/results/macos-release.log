@@ -1,0 +1,133 @@
+Building for production...
+[Pre-planning 1 / 212]
+[Planning deferred tasks]
+[1 / 1]
+[11 / 31] YogaSwiftUI
+[13 / 32] YogaSwiftUI
+[20 / 30] YogaSwiftUITests-product
+[22 / 31] YogaSwiftUITests-product
+[26 / 30] YogaSwiftUITests-product
+[28 / 30] YogaSwiftUITests-product
+Build complete! (2,99 secs)
+Test Suite 'All tests' started at 2026-09-29 16:42:33.159.
+Test Suite 'YogaTests.xctest' started at 2026-09-29 16:42:33.160.
+Test Suite 'NodeLifecycleTests' started at 2026-09-29 16:42:33.160.
+Test Case '-[YogaTests.NodeLifecycleTests testAutoPaddingAndGapRestoreGroupedFallbacks]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testAutoPaddingAndGapRestoreGroupedFallbacks]' passed (0.000 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testBaselineCallbackAlignsSiblings]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testBaselineCallbackAlignsSiblings]' passed (0.000 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testChangedRootProposalPreservesPixelRoundingOnCacheHits]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testChangedRootProposalPreservesPixelRoundingOnCacheHits]' passed (0.000 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testCompatibleMeasuredConstraintsReuseTheCallback]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testCompatibleMeasuredConstraintsReuseTheCallback]' passed (0.000 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testDisplayTransitionsInvalidateFlattenedChildren]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testDisplayTransitionsInvalidateFlattenedChildren]' passed (0.000 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testMeasuredContentInvalidationAndRepeatedLayout]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testMeasuredContentInvalidationAndRepeatedLayout]' passed (0.000 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testParentsDoNotFormRetainCycles]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testParentsDoNotFormRetainCycles]' passed (0.000 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testPercentageInsetsInvalidateWhenOnlyOwnerWidthChanges]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testPercentageInsetsInvalidateWhenOnlyOwnerWidthChanges]' passed (0.000 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testRemovalReparentingAndOwnership]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testRemovalReparentingAndOwnership]' passed (0.000 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testRetainedChildCanBecomeARootAfterItsParentIsReleased]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testRetainedChildCanBecomeARootAfterItsParentIsReleased]' passed (0.000 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testReusedTreeMatchesFreshLayoutAfterMutations]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testReusedTreeMatchesFreshLayoutAfterMutations]' passed (0.001 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testRoundedLayoutRemainsStableOnCacheHits]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testRoundedLayoutRemainsStableOnCacheHits]' passed (0.000 seconds).
+Test Case '-[YogaTests.NodeLifecycleTests testStylesAreValuesAndInvalidateAncestors]' started.
+Test Case '-[YogaTests.NodeLifecycleTests testStylesAreValuesAndInvalidateAncestors]' passed (0.000 seconds).
+Test Suite 'NodeLifecycleTests' passed at 2026-09-29 16:42:33.163.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
+Test Suite 'StorageTests' started at 2026-09-29 16:42:33.163.
+Test Case '-[YogaTests.StorageTests testCompactOptionalScalarsAndClearedEdgesPreserveValueSemantics]' started.
+Test Case '-[YogaTests.StorageTests testCompactOptionalScalarsAndClearedEdgesPreserveValueSemantics]' passed (0.000 seconds).
+Test Case '-[YogaTests.StorageTests testContentsAndAbsoluteTransitionsRefreshFlow]' started.
+Test Case '-[YogaTests.StorageTests testContentsAndAbsoluteTransitionsRefreshFlow]' passed (0.000 seconds).
+Test Case '-[YogaTests.StorageTests testGrowthAndReparentingPreserveValuesAndCallbacks]' started.
+Test Case '-[YogaTests.StorageTests testGrowthAndReparentingPreserveValuesAndCallbacks]' passed (0.000 seconds).
+Test Case '-[YogaTests.StorageTests testLengthStoragePreservesUnitsAndValueSemantics]' started.
+Test Case '-[YogaTests.StorageTests testLengthStoragePreservesUnitsAndValueSemantics]' passed (0.000 seconds).
+Test Case '-[YogaTests.StorageTests testRecycledStorageReleasesCallbacksAndOldStyles]' started.
+Test Case '-[YogaTests.StorageTests testRecycledStorageReleasesCallbacksAndOldStyles]' passed (0.000 seconds).
+Test Suite 'StorageTests' passed at 2026-09-29 16:42:33.164.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'TreeLifecycleTests' started at 2026-09-29 16:42:33.164.
+Test Case '-[YogaTests.TreeLifecycleTests testDetachedRootsPrepareIndependentTopology]' started.
+Test Case '-[YogaTests.TreeLifecycleTests testDetachedRootsPrepareIndependentTopology]' passed (0.000 seconds).
+Test Case '-[YogaTests.TreeLifecycleTests testHandleDoesNotKeepTreeOrContentAlive]' started.
+Test Case '-[YogaTests.TreeLifecycleTests testHandleDoesNotKeepTreeOrContentAlive]' passed (0.000 seconds).
+Test Case '-[YogaTests.TreeLifecycleTests testIdentifiersSurviveGrowthButRejectDeletionAndOtherOwners]' started.
+Test Case '-[YogaTests.TreeLifecycleTests testIdentifiersSurviveGrowthButRejectDeletionAndOtherOwners]' passed (0.000 seconds).
+Test Case '-[YogaTests.TreeLifecycleTests testMeasurementInvalidationAndBaselineCallbacks]' started.
+Test Case '-[YogaTests.TreeLifecycleTests testMeasurementInvalidationAndBaselineCallbacks]' passed (0.000 seconds).
+Test Case '-[YogaTests.TreeLifecycleTests testReparentingAndRemovalInvalidateDescendantHandles]' started.
+Test Case '-[YogaTests.TreeLifecycleTests testReparentingAndRemovalInvalidateDescendantHandles]' passed (0.000 seconds).
+Test Case '-[YogaTests.TreeLifecycleTests testRepeatedGrowShrinkAndReusePreserveStaleHandleChecks]' started.
+Test Case '-[YogaTests.TreeLifecycleTests testRepeatedGrowShrinkAndReusePreserveStaleHandleChecks]' passed (0.001 seconds).
+Test Suite 'TreeLifecycleTests' passed at 2026-09-29 16:42:33.165.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'UpstreamFixtureTests' started at 2026-09-29 16:42:33.165.
+Test Case '-[YogaTests.UpstreamFixtureTests testAllGeneratedFixturesThroughTreeHandles]' started.
+Test Case '-[YogaTests.UpstreamFixtureTests testAllGeneratedFixturesThroughTreeHandles]' passed (0.052 seconds).
+Test Case '-[YogaTests.UpstreamFixtureTests testAllGeneratedYoga321Fixtures]' started.
+Test Case '-[YogaTests.UpstreamFixtureTests testAllGeneratedYoga321Fixtures]' passed (0.051 seconds).
+Test Suite 'UpstreamFixtureTests' passed at 2026-09-29 16:42:33.268.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.103 (0.103) seconds
+Test Suite 'YogaTests.xctest' passed at 2026-09-29 16:42:33.268.
+	 Executed 26 tests, with 0 failures (0 unexpected) in 0.107 (0.108) seconds
+Test Suite 'All tests' passed at 2026-09-29 16:42:33.268.
+	 Executed 26 tests, with 0 failures (0 unexpected) in 0.107 (0.109) seconds
+YogaTree 3.2.1 conformance: 531/531 active fixtures, 15856 assertions; 17 disabled upstream
+Yoga 3.2.1 conformance: 531/531 active fixtures, 15856 assertions; 17 disabled upstream
+Test Suite 'All tests' started at 2026-09-29 16:42:33.366.
+Test Suite 'YogaSwiftUITests.xctest' started at 2026-09-29 16:42:33.367.
+Test Suite 'PublicAPITests' started at 2026-09-29 16:42:33.367.
+Test Case '-[YogaSwiftUITests.PublicAPITests testPublicModifiersCompileWithoutImportingCore]' started.
+Test Case '-[YogaSwiftUITests.PublicAPITests testPublicModifiersCompileWithoutImportingCore]' passed (0.003 seconds).
+Test Suite 'PublicAPITests' passed at 2026-09-29 16:42:33.370.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'SwiftUIIntegrationTests' started at 2026-09-29 16:42:33.370.
+Test Case '-[YogaSwiftUITests.SwiftUIIntegrationTests testAbsoluteItemUsesPercentWidthAndEdgeOffsets]' started.
+Test Case '-[YogaSwiftUITests.SwiftUIIntegrationTests testAbsoluteItemUsesPercentWidthAndEdgeOffsets]' passed (0.049 seconds).
+Test Case '-[YogaSwiftUITests.SwiftUIIntegrationTests testChangedTextInvalidatesIntrinsicMeasurements]' started.
+Test Case '-[YogaSwiftUITests.SwiftUIIntegrationTests testChangedTextInvalidatesIntrinsicMeasurements]' passed (0.027 seconds).
+Test Case '-[YogaSwiftUITests.SwiftUIIntegrationTests testChildPaddingOffsetsItsSwiftUIContent]' started.
+Test Case '-[YogaSwiftUITests.SwiftUIIntegrationTests testChildPaddingOffsetsItsSwiftUIContent]' passed (0.009 seconds).
+Test Case '-[YogaSwiftUITests.SwiftUIIntegrationTests testContainerGapModifierOverridesInitializerGap]' started.
+Test Case '-[YogaSwiftUITests.SwiftUIIntegrationTests testContainerGapModifierOverridesInitializerGap]' passed (0.001 seconds).
+Test Case '-[YogaSwiftUITests.SwiftUIIntegrationTests testFlexPlacesSwiftUIChildren]' started.
+Test Case '-[YogaSwiftUITests.SwiftUIIntegrationTests testFlexPlacesSwiftUIChildren]' passed (0.001 seconds).
+Test Suite 'SwiftUIIntegrationTests' passed at 2026-09-29 16:42:33.457.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.087 (0.087) seconds
+Test Suite 'VisibilityTests' started at 2026-09-29 16:42:33.457.
+Test Case '-[YogaSwiftUITests.VisibilityTests testHiddenChildDoesNotRenderAtFallbackPlacement]' started.
+Test Case '-[YogaSwiftUITests.VisibilityTests testHiddenChildDoesNotRenderAtFallbackPlacement]' passed (0.001 seconds).
+Test Case '-[YogaSwiftUITests.VisibilityTests testHiddenContainerDoesNotRenderChildren]' started.
+Test Case '-[YogaSwiftUITests.VisibilityTests testHiddenContainerDoesNotRenderChildren]' passed (0.001 seconds).
+Test Case '-[YogaSwiftUITests.VisibilityTests testVisibilityCanChangeOnAnExistingRenderer]' started.
+Test Case '-[YogaSwiftUITests.VisibilityTests testVisibilityCanChangeOnAnExistingRenderer]' passed (0.002 seconds).
+Test Suite 'VisibilityTests' passed at 2026-09-29 16:42:33.461.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'YogaStyleTests' started at 2026-09-29 16:42:33.461.
+Test Case '-[YogaSwiftUITests.YogaStyleTests testAbsolutePositionAndPercentDimensions]' started.
+Test Case '-[YogaSwiftUITests.YogaStyleTests testAbsolutePositionAndPercentDimensions]' passed (0.000 seconds).
+Test Case '-[YogaSwiftUITests.YogaStyleTests testFlexGrowAndAlignSelf]' started.
+Test Case '-[YogaSwiftUITests.YogaStyleTests testFlexGrowAndAlignSelf]' passed (0.000 seconds).
+Test Case '-[YogaSwiftUITests.YogaStyleTests testWrappingGapsAndPadding]' started.
+Test Case '-[YogaSwiftUITests.YogaStyleTests testWrappingGapsAndPadding]' passed (0.000 seconds).
+Test Suite 'YogaStyleTests' passed at 2026-09-29 16:42:33.461.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'YogaSwiftUITests.xctest' passed at 2026-09-29 16:42:33.461.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.093 (0.094) seconds
+Test Suite 'All tests' passed at 2026-09-29 16:42:33.461.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.093 (0.095) seconds
+􀟈  Test run started.
+􀄵  Testing Library Version: 2084
+􀄵  Target Platform: arm64e-apple-macos14.0
+􁁛  Test run with 0 tests in 0 suites passed after 0.001 seconds.
+􀟈  Test run started.
+􀄵  Testing Library Version: 2084
+􀄵  Target Platform: arm64e-apple-macos14.0
+􁁛  Test run with 0 tests in 0 suites passed after 0.001 seconds.

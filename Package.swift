@@ -1,33 +1,26 @@
-// swift-tools-version: 6.0
-
+// swift-tools-version: 6.4
 import PackageDescription
+
+var products: [Product] = [.library(name: "Yoga", targets: ["Yoga"])]
+var targets: [Target] = [
+    .target(name: "Yoga"),
+    .testTarget(name: "YogaTests", dependencies: ["Yoga"], resources: [.process("Fixtures")])
+]
+
+// SwiftUI is available when building Apple-platform clients on macOS.
+// Other hosts can build and test the standalone, standard-library-only core.
+#if os(macOS)
+products.append(.library(name: "YogaSwiftUI", targets: ["YogaSwiftUI"]))
+targets += [
+    .target(name: "YogaSwiftUI", dependencies: ["Yoga"]),
+    .testTarget(name: "YogaSwiftUITests", dependencies: ["YogaSwiftUI", "Yoga"])
+]
+#endif
 
 let package = Package(
     name: "Yoga-SwiftUI",
     platforms: [.iOS(.v16), .macOS(.v13), .tvOS(.v16), .watchOS(.v9), .visionOS(.v1)],
-    products: [
-        .library(
-            name: "YogaSwiftUI",
-            targets: ["YogaSwiftUI"]),
-    ],
-    dependencies: [
-        .package(url: "https://github.com/react/yoga.git", exact: "3.2.1")
-    ],
-    targets: [
-        .target(
-            name: "YogaSwiftUI",
-            dependencies: ["YogaBridge"],
-            swiftSettings: [.interoperabilityMode(.Cxx)]),
-        // Yoga's SwiftPM target exposes its repository root as public headers.
-        // This narrow target imports only the supported public Yoga API.
-        .target(
-            name: "YogaBridge",
-            dependencies: [.product(name: "yoga", package: "yoga")]),
-        .testTarget(
-            name: "YogaSwiftUITests",
-            dependencies: ["YogaSwiftUI", "YogaBridge"],
-            swiftSettings: [.interoperabilityMode(.Cxx)])
-    ],
-    swiftLanguageModes: [.v6],
-    cxxLanguageStandard: .cxx20
+    products: products,
+    targets: targets,
+    swiftLanguageModes: [.v6]
 )

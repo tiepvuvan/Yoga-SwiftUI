@@ -1,52 +1,34 @@
 import SwiftUI
-import YogaBridge
+import Yoga
 
-/// Keeps a SwiftUI subview alive while Yoga invokes its synchronous C callbacks.
+/// Reuses one SwiftUI measurement context per child throughout the cache lifetime.
 final class YogaSubviewMeasure {
-    let subview: LayoutSubviews.Element
+    var subview: LayoutSubviews.Element
 
-    init(_ subview: LayoutSubviews.Element) {
-        self.subview = subview
+    init(_ subview: LayoutSubviews.Element) { self.subview = subview }
+
+    func measure(width: Float, widthMode: YogaMeasureMode, height: Float, heightMode: YogaMeasureMode) -> YogaSize {
+        let size = subview.sizeThatFits(ProposedViewSize(
+            width: widthMode == .undefined ? nil : CGFloat(width),
+            height: heightMode == .undefined ? nil : CGFloat(height)
+        ))
+        return YogaSize(width: dimension(Float(size.width), limit: width, mode: widthMode),
+                        height: dimension(Float(size.height), limit: height, mode: heightMode))
     }
-}
 
-let yogaMeasureSubview: YGMeasureFunc = { node, width, widthMode, height, heightMode in
-    guard let context = YGNodeGetContext(node) else {
-        return YGSize(width: 0, height: 0)
+    func baseline(layout: YogaLayout, width: Float, height: Float) -> Float {
+        let horizontal = layout.padding.left + layout.padding.right + layout.border.left + layout.border.right
+        let vertical = layout.padding.top + layout.padding.bottom + layout.border.top + layout.border.bottom
+        let dimensions = subview.dimensions(in: ProposedViewSize(width: CGFloat(max(0, width - horizontal)),
+                                                                 height: CGFloat(max(0, height - vertical))))
+        return Float(dimensions[.firstTextBaseline]) + layout.padding.top + layout.border.top
     }
-    let measurement = Unmanaged<YogaSubviewMeasure>.fromOpaque(context).takeUnretainedValue()
-    let proposal = ProposedViewSize(
-        width: widthMode == .undefined ? nil : CGFloat(width),
-        height: heightMode == .undefined ? nil : CGFloat(height)
-    )
-    let size = measurement.subview.sizeThatFits(proposal)
-    return YGSize(
-        width: measuredDimension(size.width, limit: width, mode: widthMode),
-        height: measuredDimension(size.height, limit: height, mode: heightMode)
-    )
-}
 
-let yogaBaselineSubview: YGBaselineFunc = { node, width, height in
-    guard let context = YGNodeGetContext(node) else { return height }
-    let measurement = Unmanaged<YogaSubviewMeasure>.fromOpaque(context).takeUnretainedValue()
-    let horizontalInset = YGNodeLayoutGetPadding(node, .left) + YGNodeLayoutGetPadding(node, .right)
-        + YGNodeLayoutGetBorder(node, .left) + YGNodeLayoutGetBorder(node, .right)
-    let verticalInset = YGNodeLayoutGetPadding(node, .top) + YGNodeLayoutGetPadding(node, .bottom)
-        + YGNodeLayoutGetBorder(node, .top) + YGNodeLayoutGetBorder(node, .bottom)
-    let dimensions = measurement.subview.dimensions(
-        in: ProposedViewSize(
-            width: CGFloat(max(0, width - horizontalInset)),
-            height: CGFloat(max(0, height - verticalInset))
-        )
-    )
-    return Float(dimensions[.firstTextBaseline])
-        + YGNodeLayoutGetPadding(node, .top) + YGNodeLayoutGetBorder(node, .top)
-}
-
-private func measuredDimension(_ value: CGFloat, limit: Float, mode: YGMeasureMode) -> Float {
-    switch mode {
-    case .exactly: limit
-    case .atMost: min(Float(value), limit)
-    default: Float(value)
+    private func dimension(_ value: Float, limit: Float, mode: YogaMeasureMode) -> Float {
+        switch mode {
+        case .exactly: limit
+        case .atMost: min(value, limit)
+        case .undefined: value
+        }
     }
 }

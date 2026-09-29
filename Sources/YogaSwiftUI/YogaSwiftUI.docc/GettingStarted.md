@@ -4,19 +4,19 @@ Install Yoga-SwiftUI and make your first flex layout.
 
 ## Requirements
 
-Yoga-SwiftUI 2.0 supports iOS 16+, macOS 13+, tvOS 16+, watchOS 9+, and visionOS 1+. It requires Swift 6 and a C++20-capable toolchain. Each client target that imports or depends on `YogaSwiftUI` must enable Swift/C++ interoperability.
+Yoga-SwiftUI 3.0 supports iOS 16+, macOS 13+, tvOS 16+, watchOS 9+, and visionOS 1+. It requires Swift 6.4 or later. Both the layout engine and SwiftUI integration are native Swift, with no external dependencies.
 
 ## Add the package
 
 In Xcode, add `https://github.com/tiepvuvan/Yoga-SwiftUI.git` as a package dependency and select the `YogaSwiftUI` library.
 
-In a package manifest, add the repository and enable interoperability on your target:
+In a package manifest, add the repository and select your target's product:
 
 ```swift
 dependencies: [
     .package(
         url: "https://github.com/tiepvuvan/Yoga-SwiftUI.git",
-        from: "2.0.0"
+        from: "3.0.0"
     )
 ],
 targets: [
@@ -24,15 +24,14 @@ targets: [
         name: "YourTarget",
         dependencies: [
             .product(name: "YogaSwiftUI", package: "Yoga-SwiftUI")
-        ],
-        swiftSettings: [.interoperabilityMode(.Cxx)]
+        ]
     )
 ]
 ```
 
-In an Xcode app target, set **C++ and Objective-C Interoperability** to **C++ / Objective-C++**. A consumer target must opt in because [Swift requires C++ interoperability throughout the dependency chain](https://www.swift.org/documentation/cxx-interop/project-build-setup/).
+If upgrading from v2, remove this package's C++ interoperability setting. Choose the separate `Yoga` product when you need standalone layout geometry without SwiftUI.
 
-> Important: The `from: "2.0.0"` requirement becomes available after the v2.0.0 tag is published.
+> Important: The `from: "3.0.0"` requirement becomes available after the v3.0.0 tag is published. Use a local package dependency to evaluate the development checkout.
 
 ## Create a row
 

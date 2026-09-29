@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-29T08:21:00.498238+00:00",
+  "source_sha256": "526e4ad346a7b18a12a7fb2c7a8a32c0ef0738dbe6be88d931d3be1c4aed9d56",
+  "image": "swift:6.4.0-noble@sha256:64bab762bc73a3fda6d9ebc559258bd6d7660c10a705bb25ecacad2f99d066f9",
+  "passed": true,
+  "log": "linux.log",
+  "isolation": "Network disabled; repository mounted read-only; build artifacts in temporary container memory",
+  "core_source_sha256": "0698f0133a28c84591a0d16fe6eb0f1596c8e01b0cff04591513a445a11e808e",
+  "source_scope": "Yoga"
+}

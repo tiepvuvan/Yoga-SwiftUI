@@ -1,0 +1,19 @@
+{
+  "release": {
+    "passed": true,
+    "core_tests": 26,
+    "swiftui_tests": 12,
+    "tests": 38,
+    "log": "macos-release.log"
+  },
+  "address_sanitizer": {
+    "passed": true,
+    "core_tests": 26,
+    "swiftui_tests": 12,
+    "tests": 38,
+    "log": "macos-address_sanitizer.log"
+  },
+  "source_sha256": "fdc9f00884bddb991c797da615d43b15ad9489cdbfe71eed33273beea4139f22",
+  "core_source_sha256": "0698f0133a28c84591a0d16fe6eb0f1596c8e01b0cff04591513a445a11e808e",
+  "environment": "Apple M4 Pro, macOS 27.2, Apple Swift 6.4"
+}

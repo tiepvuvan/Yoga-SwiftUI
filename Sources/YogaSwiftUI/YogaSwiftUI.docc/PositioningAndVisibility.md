@@ -22,7 +22,7 @@ Logical `.start` and `.end` edges follow layout direction. Use `.percent` for of
 
 ## Visibility and overflow
 
-Use `.flexDisplay(.none)` to remove an item from Yoga's layout and SwiftUI placement. `.flexDisplay(.flex)` restores it.
+Use `.flexDisplay(.none)` to remove an item from the flex flow and hide its drawing, hit testing, and accessibility. `.flexDisplay(.flex)` restores it. Use `.yogaDisplay(.none)` to hide an entire `Flex` container. These modifiers preserve the view's type across visibility changes.
 
 Use `.yogaOverflow(.hidden)` to clip a `Flex` container or `.flexOverflow(.hidden)` to clip a child. `.scroll` changes Yoga's layout overflow behavior but does not add a scrolling interaction. Wrap the content in SwiftUI's `ScrollView` when scrolling is required.
 

@@ -1,0 +1,1410 @@
+{
+  "schema_version": 2,
+  "source_sha256": "fdc9f00884bddb991c797da615d43b15ad9489cdbfe71eed33273beea4139f22",
+  "core_source_sha256": "0698f0133a28c84591a0d16fe6eb0f1596c8e01b0cff04591513a445a11e808e",
+  "cpu": "Apple M4 Pro",
+  "memory_method": "Live malloc heap delta for 32 additional laid-out hosting views after framework warm-up; not RSS or peak allocation",
+  "date": "2026-09-29T09:51:45.550656+00:00",
+  "baseline_commit": "698e082bc50f33fec785675009cbdc41a75458bb",
+  "reference_commit": "042f5013152eb81c1552dec945b88f7b95ca350f",
+  "os": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "swift": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.2.0",
+  "method": {
+    "trials": 10,
+    "iterations": 1000,
+    "seed": 321064,
+    "description": "Release NSHostingView layout; alternating 320/321-point width, 128 children; randomized independent paired process trials, 100 warm-ups each",
+    "confidence_interval": "paired process-trial log-ratio bootstrap, 4000 resamples"
+  },
+  "comparisons": [
+    {
+      "workload": "shapes",
+      "cpu_ns": {
+        "ratio": 0.9587750424258554,
+        "ci95": [
+          0.951339271875573,
+          0.9651408953642191
+        ],
+        "trials": 10
+      },
+      "wall_ns": {
+        "ratio": 0.9582188149400995,
+        "ci95": [
+          0.9506736285088832,
+          0.9647203806470517
+        ],
+        "trials": 10
+      },
+      "cycles": {
+        "ratio": 0.9585863062150318,
+        "ci95": [
+          0.9509280271240627,
+          0.9656476585595003
+        ],
+        "trials": 10
+      },
+      "instructions": {
+        "ratio": 0.9528758771142011,
+        "ci95": [
+          0.9446012355352581,
+          0.9606777468339451
+        ],
+        "trials": 10
+      },
+      "live_heap_bytes_per_host": {
+        "ratio": 0.9784697332038204,
+        "ci95": [
+          0.9781099188032442,
+          0.9789156550986852
+        ],
+        "trials": 10
+      }
+    },
+    {
+      "workload": "text",
+      "cpu_ns": {
+        "ratio": 0.9407890552959215,
+        "ci95": [
+          0.9309562253157398,
+          0.9500032112094281
+        ],
+        "trials": 10
+      },
+      "wall_ns": {
+        "ratio": 0.9397241734398041,
+        "ci95": [
+          0.9296211762577463,
+          0.9495396835962601
+        ],
+        "trials": 10
+      },
+      "cycles": {
+        "ratio": 0.9419005716533685,
+        "ci95": [
+          0.933929326545528,
+          0.9495469550938532
+        ],
+        "trials": 10
+      },
+      "instructions": {
+        "ratio": 0.938895892818492,
+        "ci95": [
+          0.9359540621930488,
+          0.9416566408604673
+        ],
+        "trials": 10
+      },
+      "live_heap_bytes_per_host": {
+        "ratio": 0.9916668148703205,
+        "ci95": [
+          0.991537592975899,
+          0.9918518587825979
+        ],
+        "trials": 10
+      }
+    }
+  ],
+  "results": [
+    {
+      "hardware_counters_available": true,
+      "iterations": 1000,
+      "live_heap_bytes_per_host": 1176209.5,
+      "pixel_sha256_by_width": {
+        "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+        "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+      },
+      "workload": "shapes",
+      "engine": "v2",
+      "samples": [
+        {
+          "cpu_ns": 1141692,
+          "cycles": 4637087.508,
+          "instructions": 20384294.572,
+          "wall_ns": 1144059,
+          "trial": 0
+        },
+        {
+          "cpu_ns": 1141021,
+          "cycles": 4597043.881,
+          "instructions": 20381475.663,
+          "wall_ns": 1141923,
+          "trial": 1
+        },
+        {
+          "cpu_ns": 1142601,
+          "cycles": 4623835.114,
+          "instructions": 20448562.611,
+          "wall_ns": 1145351,
+          "trial": 2
+        },
+        {
+          "cpu_ns": 1184140,
+          "cycles": 4745708.733,
+          "instructions": 20978459.107,
+          "wall_ns": 1186550,
+          "trial": 3
+        },
+        {
+          "cpu_ns": 1145677,
+          "cycles": 4606796.9,
+          "instructions": 20410340.509,
+          "wall_ns": 1147389,
+          "trial": 4
+        },
+        {
+          "cpu_ns": 1157466,
+          "cycles": 4669038.949,
+          "instructions": 20556462.699,
+          "wall_ns": 1159726,
+          "trial": 5
+        },
+        {
+          "cpu_ns": 1156088,
+          "cycles": 4658024.475,
+          "instructions": 20407884.302,
+          "wall_ns": 1159085,
+          "trial": 6
+        },
+        {
+          "cpu_ns": 1162412,
+          "cycles": 4659911.834,
+          "instructions": 20444643.175,
+          "wall_ns": 1166078,
+          "trial": 7
+        },
+        {
+          "cpu_ns": 1166130,
+          "cycles": 4701466.476,
+          "instructions": 20452651.673,
+          "wall_ns": 1170294,
+          "trial": 8
+        },
+        {
+          "cpu_ns": 1176760,
+          "cycles": 4728705.06,
+          "instructions": 20607388.637,
+          "wall_ns": 1185905,
+          "trial": 9
+        }
+      ],
+      "trials": [
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1175894,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1141692,
+              "cycles": 4637087.508,
+              "instructions": 20384294.572,
+              "wall_ns": 1144059
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v2",
+          "trial": 0,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1176491.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1141021,
+              "cycles": 4597043.881,
+              "instructions": 20381475.663,
+              "wall_ns": 1141923
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v2",
+          "trial": 1,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1176807.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1142601,
+              "cycles": 4623835.114,
+              "instructions": 20448562.611,
+              "wall_ns": 1145351
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v2",
+          "trial": 2,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1176173.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1184140,
+              "cycles": 4745708.733,
+              "instructions": 20978459.107,
+              "wall_ns": 1186550
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v2",
+          "trial": 3,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1176161.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1145677,
+              "cycles": 4606796.9,
+              "instructions": 20410340.509,
+              "wall_ns": 1147389
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v2",
+          "trial": 4,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1176247.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1157466,
+              "cycles": 4669038.949,
+              "instructions": 20556462.699,
+              "wall_ns": 1159726
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v2",
+          "trial": 5,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1175717,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1156088,
+              "cycles": 4658024.475,
+              "instructions": 20407884.302,
+              "wall_ns": 1159085
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v2",
+          "trial": 6,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1176245.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1162412,
+              "cycles": 4659911.834,
+              "instructions": 20444643.175,
+              "wall_ns": 1166078
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v2",
+          "trial": 7,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1175571,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1166130,
+              "cycles": 4701466.476,
+              "instructions": 20452651.673,
+              "wall_ns": 1170294
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v2",
+          "trial": 8,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1176407.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1176760,
+              "cycles": 4728705.06,
+              "instructions": 20607388.637,
+              "wall_ns": 1185905
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v2",
+          "trial": 9,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        }
+      ]
+    },
+    {
+      "hardware_counters_available": true,
+      "iterations": 1000,
+      "live_heap_bytes_per_host": 1150502.75,
+      "pixel_sha256_by_width": {
+        "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+        "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+      },
+      "workload": "shapes",
+      "engine": "v3",
+      "samples": [
+        {
+          "cpu_ns": 1079619,
+          "cycles": 4364145.111,
+          "instructions": 19472573.048,
+          "wall_ns": 1080188,
+          "trial": 0
+        },
+        {
+          "cpu_ns": 1102413,
+          "cycles": 4460705.226,
+          "instructions": 19521894.125,
+          "wall_ns": 1104201,
+          "trial": 1
+        },
+        {
+          "cpu_ns": 1093506,
+          "cycles": 4438697.96,
+          "instructions": 19330408.776,
+          "wall_ns": 1095669,
+          "trial": 2
+        },
+        {
+          "cpu_ns": 1105434,
+          "cycles": 4447044.314,
+          "instructions": 19430975.117,
+          "wall_ns": 1107237,
+          "trial": 3
+        },
+        {
+          "cpu_ns": 1102260,
+          "cycles": 4451174.618,
+          "instructions": 19361071.786,
+          "wall_ns": 1105688,
+          "trial": 4
+        },
+        {
+          "cpu_ns": 1116196,
+          "cycles": 4481181.29,
+          "instructions": 19487142.776,
+          "wall_ns": 1119167,
+          "trial": 5
+        },
+        {
+          "cpu_ns": 1127159,
+          "cycles": 4560324.915,
+          "instructions": 19866270.111,
+          "wall_ns": 1129470,
+          "trial": 6
+        },
+        {
+          "cpu_ns": 1116905,
+          "cycles": 4482226.904,
+          "instructions": 19889447.164,
+          "wall_ns": 1117992,
+          "trial": 7
+        },
+        {
+          "cpu_ns": 1115635,
+          "cycles": 4481034.253,
+          "instructions": 19526798.708,
+          "wall_ns": 1118929,
+          "trial": 8
+        },
+        {
+          "cpu_ns": 1138012,
+          "cycles": 4530606.804,
+          "instructions": 19523206.896,
+          "wall_ns": 1143141,
+          "trial": 9
+        }
+      ],
+      "trials": [
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1152487.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1079619,
+              "cycles": 4364145.111,
+              "instructions": 19472573.048,
+              "wall_ns": 1080188
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v3",
+          "trial": 0,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1150527.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1102413,
+              "cycles": 4460705.226,
+              "instructions": 19521894.125,
+              "wall_ns": 1104201
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v3",
+          "trial": 1,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1151405.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1093506,
+              "cycles": 4438697.96,
+              "instructions": 19330408.776,
+              "wall_ns": 1095669
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v3",
+          "trial": 2,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1150342,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1105434,
+              "cycles": 4447044.314,
+              "instructions": 19430975.117,
+              "wall_ns": 1107237
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v3",
+          "trial": 3,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1150525.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1102260,
+              "cycles": 4451174.618,
+              "instructions": 19361071.786,
+              "wall_ns": 1105688
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v3",
+          "trial": 4,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1150480,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1116196,
+              "cycles": 4481181.29,
+              "instructions": 19487142.776,
+              "wall_ns": 1119167
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v3",
+          "trial": 5,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1151386.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1127159,
+              "cycles": 4560324.915,
+              "instructions": 19866270.111,
+              "wall_ns": 1129470
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v3",
+          "trial": 6,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1150439.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1116905,
+              "cycles": 4482226.904,
+              "instructions": 19889447.164,
+              "wall_ns": 1117992
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v3",
+          "trial": 7,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1150445.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1115635,
+              "cycles": 4481034.253,
+              "instructions": 19526798.708,
+              "wall_ns": 1118929
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v3",
+          "trial": 8,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 1150445.5,
+          "pixel_sha256_by_width": {
+            "320": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+            "321": "aedca294ab2f82f23b4ccc13ffeae87ef4215c2b89281d1e7373307d20df603a"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1138012,
+              "cycles": 4530606.804,
+              "instructions": 19523206.896,
+              "wall_ns": 1143141
+            }
+          ],
+          "workload": "shapes",
+          "engine": "v3",
+          "trial": 9,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        }
+      ]
+    },
+    {
+      "hardware_counters_available": true,
+      "iterations": 1000,
+      "live_heap_bytes_per_host": 3026849.5,
+      "pixel_sha256_by_width": {
+        "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+        "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+      },
+      "workload": "text",
+      "engine": "v2",
+      "samples": [
+        {
+          "cpu_ns": 1193513,
+          "cycles": 4762431.33,
+          "instructions": 20924416.929,
+          "wall_ns": 1202183,
+          "trial": 0
+        },
+        {
+          "cpu_ns": 1191829,
+          "cycles": 4741417.673,
+          "instructions": 20903852.815,
+          "wall_ns": 1196487,
+          "trial": 1
+        },
+        {
+          "cpu_ns": 1181303,
+          "cycles": 4714530.506,
+          "instructions": 20943222.031,
+          "wall_ns": 1182731,
+          "trial": 2
+        },
+        {
+          "cpu_ns": 1180456,
+          "cycles": 4736040.119,
+          "instructions": 20946559.8,
+          "wall_ns": 1183318,
+          "trial": 3
+        },
+        {
+          "cpu_ns": 1189151,
+          "cycles": 4743578.703,
+          "instructions": 20926307.013,
+          "wall_ns": 1191919,
+          "trial": 4
+        },
+        {
+          "cpu_ns": 1155766,
+          "cycles": 4648952.316,
+          "instructions": 21023563.289,
+          "wall_ns": 1155844,
+          "trial": 5
+        },
+        {
+          "cpu_ns": 1158180,
+          "cycles": 4648074.821,
+          "instructions": 20848560.751,
+          "wall_ns": 1159206,
+          "trial": 6
+        },
+        {
+          "cpu_ns": 1145079,
+          "cycles": 4607156.106,
+          "instructions": 20887882.6,
+          "wall_ns": 1145054,
+          "trial": 7
+        },
+        {
+          "cpu_ns": 1173867,
+          "cycles": 4702096.179,
+          "instructions": 21091841.675,
+          "wall_ns": 1174573,
+          "trial": 8
+        },
+        {
+          "cpu_ns": 1153126,
+          "cycles": 4632399.935,
+          "instructions": 20907964.385,
+          "wall_ns": 1153418,
+          "trial": 9
+        }
+      ],
+      "trials": [
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3026190.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1193513,
+              "cycles": 4762431.33,
+              "instructions": 20924416.929,
+              "wall_ns": 1202183
+            }
+          ],
+          "workload": "text",
+          "engine": "v2",
+          "trial": 0,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3026652.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1191829,
+              "cycles": 4741417.673,
+              "instructions": 20903852.815,
+              "wall_ns": 1196487
+            }
+          ],
+          "workload": "text",
+          "engine": "v2",
+          "trial": 1,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3026888.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1181303,
+              "cycles": 4714530.506,
+              "instructions": 20943222.031,
+              "wall_ns": 1182731
+            }
+          ],
+          "workload": "text",
+          "engine": "v2",
+          "trial": 2,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3027136.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1180456,
+              "cycles": 4736040.119,
+              "instructions": 20946559.8,
+              "wall_ns": 1183318
+            }
+          ],
+          "workload": "text",
+          "engine": "v2",
+          "trial": 3,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3027212.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1189151,
+              "cycles": 4743578.703,
+              "instructions": 20926307.013,
+              "wall_ns": 1191919
+            }
+          ],
+          "workload": "text",
+          "engine": "v2",
+          "trial": 4,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3026738.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1155766,
+              "cycles": 4648952.316,
+              "instructions": 21023563.289,
+              "wall_ns": 1155844
+            }
+          ],
+          "workload": "text",
+          "engine": "v2",
+          "trial": 5,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3026810.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1158180,
+              "cycles": 4648074.821,
+              "instructions": 20848560.751,
+              "wall_ns": 1159206
+            }
+          ],
+          "workload": "text",
+          "engine": "v2",
+          "trial": 6,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3027430,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1145079,
+              "cycles": 4607156.106,
+              "instructions": 20887882.6,
+              "wall_ns": 1145054
+            }
+          ],
+          "workload": "text",
+          "engine": "v2",
+          "trial": 7,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3027052.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1173867,
+              "cycles": 4702096.179,
+              "instructions": 21091841.675,
+              "wall_ns": 1174573
+            }
+          ],
+          "workload": "text",
+          "engine": "v2",
+          "trial": 8,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3026576.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1153126,
+              "cycles": 4632399.935,
+              "instructions": 20907964.385,
+              "wall_ns": 1153418
+            }
+          ],
+          "workload": "text",
+          "engine": "v2",
+          "trial": 9,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        }
+      ]
+    },
+    {
+      "hardware_counters_available": true,
+      "iterations": 1000,
+      "live_heap_bytes_per_host": 3001400.5,
+      "pixel_sha256_by_width": {
+        "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+        "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+      },
+      "workload": "text",
+      "engine": "v3",
+      "samples": [
+        {
+          "cpu_ns": 1131706,
+          "cycles": 4527987.765,
+          "instructions": 19725906.972,
+          "wall_ns": 1134269,
+          "trial": 0
+        },
+        {
+          "cpu_ns": 1100740,
+          "cycles": 4416235.039,
+          "instructions": 19546997.244,
+          "wall_ns": 1102181,
+          "trial": 1
+        },
+        {
+          "cpu_ns": 1085766,
+          "cycles": 4347063.168,
+          "instructions": 19615665.752,
+          "wall_ns": 1086045,
+          "trial": 2
+        },
+        {
+          "cpu_ns": 1107383,
+          "cycles": 4432942.555,
+          "instructions": 19731089.922,
+          "wall_ns": 1108106,
+          "trial": 3
+        },
+        {
+          "cpu_ns": 1095879,
+          "cycles": 4409801.911,
+          "instructions": 19684667.829,
+          "wall_ns": 1095915,
+          "trial": 4
+        },
+        {
+          "cpu_ns": 1095746,
+          "cycles": 4390908.574,
+          "instructions": 19619812.816,
+          "wall_ns": 1096124,
+          "trial": 5
+        },
+        {
+          "cpu_ns": 1101050,
+          "cycles": 4414238.138,
+          "instructions": 19647943.921,
+          "wall_ns": 1101578,
+          "trial": 6
+        },
+        {
+          "cpu_ns": 1104213,
+          "cycles": 4415401.879,
+          "instructions": 19617524.603,
+          "wall_ns": 1106305,
+          "trial": 7
+        },
+        {
+          "cpu_ns": 1094446,
+          "cycles": 4392264.978,
+          "instructions": 19627556.154,
+          "wall_ns": 1094738,
+          "trial": 8
+        },
+        {
+          "cpu_ns": 1110733,
+          "cycles": 4462442.986,
+          "instructions": 19791755.383,
+          "wall_ns": 1110796,
+          "trial": 9
+        }
+      ],
+      "trials": [
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3003200.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1131706,
+              "cycles": 4527987.765,
+              "instructions": 19725906.972,
+              "wall_ns": 1134269
+            }
+          ],
+          "workload": "text",
+          "engine": "v3",
+          "trial": 0,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3001096,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1100740,
+              "cycles": 4416235.039,
+              "instructions": 19546997.244,
+              "wall_ns": 1102181
+            }
+          ],
+          "workload": "text",
+          "engine": "v3",
+          "trial": 1,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3001518.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1085766,
+              "cycles": 4347063.168,
+              "instructions": 19615665.752,
+              "wall_ns": 1086045
+            }
+          ],
+          "workload": "text",
+          "engine": "v3",
+          "trial": 2,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3001282.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1107383,
+              "cycles": 4432942.555,
+              "instructions": 19731089.922,
+              "wall_ns": 1108106
+            }
+          ],
+          "workload": "text",
+          "engine": "v3",
+          "trial": 3,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3002078.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1095879,
+              "cycles": 4409801.911,
+              "instructions": 19684667.829,
+              "wall_ns": 1095915
+            }
+          ],
+          "workload": "text",
+          "engine": "v3",
+          "trial": 4,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3001120.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1095746,
+              "cycles": 4390908.574,
+              "instructions": 19619812.816,
+              "wall_ns": 1096124
+            }
+          ],
+          "workload": "text",
+          "engine": "v3",
+          "trial": 5,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3001678.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1101050,
+              "cycles": 4414238.138,
+              "instructions": 19647943.921,
+              "wall_ns": 1101578
+            }
+          ],
+          "workload": "text",
+          "engine": "v3",
+          "trial": 6,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3002398.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1104213,
+              "cycles": 4415401.879,
+              "instructions": 19617524.603,
+              "wall_ns": 1106305
+            }
+          ],
+          "workload": "text",
+          "engine": "v3",
+          "trial": 7,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3001122.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1094446,
+              "cycles": 4392264.978,
+              "instructions": 19627556.154,
+              "wall_ns": 1094738
+            }
+          ],
+          "workload": "text",
+          "engine": "v3",
+          "trial": 8,
+          "process_order": [
+            "v2",
+            "v3"
+          ]
+        },
+        {
+          "hardware_counters_available": true,
+          "iterations": 1000,
+          "live_heap_bytes_per_host": 3000958.5,
+          "pixel_sha256_by_width": {
+            "320": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+            "321": "02e56e3c02179695344afbb55da99287840b20f48ba4c546060b231dc2f6dced"
+          },
+          "samples": [
+            {
+              "cpu_ns": 1110733,
+              "cycles": 4462442.986,
+              "instructions": 19791755.383,
+              "wall_ns": 1110796
+            }
+          ],
+          "workload": "text",
+          "engine": "v3",
+          "trial": 9,
+          "process_order": [
+            "v3",
+            "v2"
+          ]
+        }
+      ]
+    }
+  ]
+}

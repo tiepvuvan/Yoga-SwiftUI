@@ -1,11 +1,10 @@
 import XCTest
-import YogaBridge
-@testable import YogaSwiftUI
+import Yoga
+import YogaSwiftUI
 
 final class YogaStyleTests: XCTestCase {
     func testWrappingGapsAndPadding() {
-        let root = YGNodeNew()!
-        defer { YGNodeFreeRecursive(root) }
+        let root = YogaNode()
 
         var container = YogaStyle()
         container.width = .point(100)
@@ -15,69 +14,67 @@ final class YogaStyleTests: XCTestCase {
         container.setPadding(.point(5), for: .all)
         container.setGap(.point(5), for: .row)
         container.setGap(.point(10), for: .column)
-        container.apply(to: root)
+        root.style = container
 
         for index in 0..<3 {
-            let child = YGNodeNew()!
+            let child = YogaNode()
             var item = YogaStyle()
             item.width = .point(40)
             item.height = .point(10)
-            item.apply(to: child)
-            YGNodeInsertChild(root, child, index)
+            child.style = item
+            root.insertChild(child, at: index)
         }
-        YGNodeCalculateLayout(root, 100, 50, .LTR)
+        root.calculateLayout(width: 100, height: 50)
 
-        XCTAssertEqual(YGNodeLayoutGetLeft(YGNodeGetChild(root, 0)), 5)
-        XCTAssertEqual(YGNodeLayoutGetLeft(YGNodeGetChild(root, 1)), 55)
-        XCTAssertEqual(YGNodeLayoutGetLeft(YGNodeGetChild(root, 2)), 5)
-        XCTAssertEqual(YGNodeLayoutGetTop(YGNodeGetChild(root, 2)), 20)
+        XCTAssertEqual(root.children[0].layout.left, 5)
+        XCTAssertEqual(root.children[1].layout.left, 55)
+        XCTAssertEqual(root.children[2].layout.left, 5)
+        XCTAssertEqual(root.children[2].layout.top, 20)
     }
 
     func testAbsolutePositionAndPercentDimensions() {
-        let root = YGNodeNew()!
-        defer { YGNodeFreeRecursive(root) }
-        YGNodeStyleSetWidth(root, 200)
-        YGNodeStyleSetHeight(root, 100)
+        let root = YogaNode()
+        root.style.width = .point(200)
+        root.style.height = .point(100)
 
-        let child = YGNodeNew()!
+        let child = YogaNode()
         var item = YogaStyle()
         item.positionType = .absolute
         item.width = .percent(50)
         item.height = .point(20)
         item.setPosition(.percent(25), for: .left)
         item.setPosition(.point(10), for: .top)
-        item.apply(to: child)
-        YGNodeInsertChild(root, child, 0)
-        YGNodeCalculateLayout(root, 200, 100, .LTR)
+        child.style = item
+        root.insertChild(child, at: 0)
+        root.calculateLayout(width: 200, height: 100)
 
-        XCTAssertEqual(YGNodeLayoutGetLeft(child), 50)
-        XCTAssertEqual(YGNodeLayoutGetTop(child), 10)
-        XCTAssertEqual(YGNodeLayoutGetWidth(child), 100)
+        XCTAssertEqual(child.layout.left, 50)
+        XCTAssertEqual(child.layout.top, 10)
+        XCTAssertEqual(child.layout.width, 100)
     }
 
     func testFlexGrowAndAlignSelf() {
-        let root = YGNodeNew()!
-        defer { YGNodeFreeRecursive(root) }
-        YGNodeStyleSetWidth(root, 200)
-        YGNodeStyleSetHeight(root, 60)
-        YGNodeStyleSetFlexDirection(root, .row)
-        YGNodeStyleSetAlignItems(root, .flexStart)
+        let root = YogaNode()
+        root.style.width = .point(200)
+        root.style.height = .point(60)
+        root.style.flexDirection = .row
+        root.style.alignItems = .flexStart
 
-        let fixed = YGNodeNew()!
-        YGNodeStyleSetWidth(fixed, 30)
-        YGNodeStyleSetHeight(fixed, 20)
-        YGNodeInsertChild(root, fixed, 0)
+        let fixed = YogaNode()
+        fixed.style.width = .point(30)
+        fixed.style.height = .point(20)
+        root.insertChild(fixed, at: 0)
 
-        let growing = YGNodeNew()!
+        let growing = YogaNode()
         var item = YogaStyle()
         item.flexGrow = 1
         item.height = .point(20)
         item.alignSelf = .center
-        item.apply(to: growing)
-        YGNodeInsertChild(root, growing, 1)
-        YGNodeCalculateLayout(root, 200, 60, .LTR)
+        growing.style = item
+        root.insertChild(growing, at: 1)
+        root.calculateLayout(width: 200, height: 60)
 
-        XCTAssertEqual(YGNodeLayoutGetWidth(growing), 170)
-        XCTAssertEqual(YGNodeLayoutGetTop(growing), 20)
+        XCTAssertEqual(growing.layout.width, 170)
+        XCTAssertEqual(growing.layout.top, 20)
     }
 }

@@ -1,0 +1,230 @@
+{
+  "source_sha256": "5383e9c4172c91b32c6f6ff02dc2365f113dc183d7fa5e25345aa6f7f4eac301",
+  "cpu": "Apple M4 Pro",
+  "memory_method": "Live malloc heap delta for 32 additional laid-out hosting views after framework warm-up; not RSS or peak allocation",
+  "date": "2026-09-29T06:07:56.898742+00:00",
+  "baseline_commit": "698e082bc50f33fec785675009cbdc41a75458bb",
+  "reference_commit": "042f5013152eb81c1552dec945b88f7b95ca350f",
+  "os": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "swift": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.2.0",
+  "method": "Release NSHostingView layout; alternating 320/321-point width, 128 children; seven samples after 100 warm-ups",
+  "results": [
+    {
+      "hardware_counters_available": true,
+      "image_height": 640,
+      "image_width": 320,
+      "iterations": 1000,
+      "live_heap_bytes_per_host": 1176333,
+      "pixel_sha256": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+      "samples": [
+        {
+          "cpu_ns": 1047576,
+          "cycles": 4499851.131,
+          "instructions": 20362117.726,
+          "wall_ns": 1047493
+        },
+        {
+          "cpu_ns": 1035188,
+          "cycles": 4450059.619,
+          "instructions": 20352634.23,
+          "wall_ns": 1035256
+        },
+        {
+          "cpu_ns": 1031998,
+          "cycles": 4428433.79,
+          "instructions": 20354213.791,
+          "wall_ns": 1031876
+        },
+        {
+          "cpu_ns": 1026556,
+          "cycles": 4394418.582,
+          "instructions": 20353233.187,
+          "wall_ns": 1026616
+        },
+        {
+          "cpu_ns": 1041783,
+          "cycles": 4461845.081,
+          "instructions": 20353725.083,
+          "wall_ns": 1041729
+        },
+        {
+          "cpu_ns": 1048430,
+          "cycles": 4491591.672,
+          "instructions": 20354114.017,
+          "wall_ns": 1048492
+        },
+        {
+          "cpu_ns": 1041618,
+          "cycles": 4456240.884,
+          "instructions": 20353597.756,
+          "wall_ns": 1041543
+        }
+      ],
+      "workload": "shapes",
+      "engine": "v2"
+    },
+    {
+      "hardware_counters_available": true,
+      "image_height": 640,
+      "image_width": 320,
+      "iterations": 1000,
+      "live_heap_bytes_per_host": 1142959,
+      "pixel_sha256": "432f387c62a84686720bf91d277b1b2068f0b57411e3613a09ec76a9de876dab",
+      "samples": [
+        {
+          "cpu_ns": 1032041,
+          "cycles": 4414892.54,
+          "instructions": 20048974.853,
+          "wall_ns": 1031930
+        },
+        {
+          "cpu_ns": 1045329,
+          "cycles": 4474835.084,
+          "instructions": 20048250.239,
+          "wall_ns": 1045389
+        },
+        {
+          "cpu_ns": 1036802,
+          "cycles": 4438677.968,
+          "instructions": 20048623.134,
+          "wall_ns": 1036719
+        },
+        {
+          "cpu_ns": 1035375,
+          "cycles": 4426924.748,
+          "instructions": 20048127.177,
+          "wall_ns": 1035432
+        },
+        {
+          "cpu_ns": 1031261,
+          "cycles": 4412362.056,
+          "instructions": 20048546.325,
+          "wall_ns": 1031331
+        },
+        {
+          "cpu_ns": 1028539,
+          "cycles": 4414256.514,
+          "instructions": 20048755.803,
+          "wall_ns": 1028502
+        },
+        {
+          "cpu_ns": 1018176,
+          "cycles": 4341104.82,
+          "instructions": 20049526.882,
+          "wall_ns": 1018240
+        }
+      ],
+      "workload": "shapes",
+      "engine": "v3"
+    },
+    {
+      "hardware_counters_available": true,
+      "image_height": 640,
+      "image_width": 320,
+      "iterations": 1000,
+      "live_heap_bytes_per_host": 2994359.5,
+      "pixel_sha256": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+      "samples": [
+        {
+          "cpu_ns": 1052712,
+          "cycles": 4503233.357,
+          "instructions": 20099848.095,
+          "wall_ns": 1052586
+        },
+        {
+          "cpu_ns": 1046446,
+          "cycles": 4462847.236,
+          "instructions": 20098629.201,
+          "wall_ns": 1046497
+        },
+        {
+          "cpu_ns": 1037531,
+          "cycles": 4418090.851,
+          "instructions": 20099034.646,
+          "wall_ns": 1037442
+        },
+        {
+          "cpu_ns": 1054966,
+          "cycles": 4454809.591,
+          "instructions": 20099100.329,
+          "wall_ns": 1055040
+        },
+        {
+          "cpu_ns": 1049088,
+          "cycles": 4412002.144,
+          "instructions": 20100330.62,
+          "wall_ns": 1049049
+        },
+        {
+          "cpu_ns": 1042392,
+          "cycles": 4413893.745,
+          "instructions": 20100219.372,
+          "wall_ns": 1042452
+        },
+        {
+          "cpu_ns": 1044683,
+          "cycles": 4445734.871,
+          "instructions": 20100563.668,
+          "wall_ns": 1044590
+        }
+      ],
+      "workload": "text",
+      "engine": "v3"
+    },
+    {
+      "hardware_counters_available": true,
+      "image_height": 640,
+      "image_width": 320,
+      "iterations": 1000,
+      "live_heap_bytes_per_host": 3027715.5,
+      "pixel_sha256": "c72a2c94fbe061e9fb5712b142d539efd1f0ac721f45cd4d22de3098fc0646cf",
+      "samples": [
+        {
+          "cpu_ns": 1085054,
+          "cycles": 4615110.66,
+          "instructions": 20895236.369,
+          "wall_ns": 1084935
+        },
+        {
+          "cpu_ns": 1067824,
+          "cycles": 4535759.81,
+          "instructions": 20893933.198,
+          "wall_ns": 1067894
+        },
+        {
+          "cpu_ns": 1067997,
+          "cycles": 4532890.49,
+          "instructions": 20894673.007,
+          "wall_ns": 1067898
+        },
+        {
+          "cpu_ns": 1081009,
+          "cycles": 4578718.326,
+          "instructions": 20894082.839,
+          "wall_ns": 1081070
+        },
+        {
+          "cpu_ns": 1078605,
+          "cycles": 4575558.923,
+          "instructions": 20894365.926,
+          "wall_ns": 1078578
+        },
+        {
+          "cpu_ns": 1082839,
+          "cycles": 4584306.665,
+          "instructions": 20894115.246,
+          "wall_ns": 1082908
+        },
+        {
+          "cpu_ns": 1084783,
+          "cycles": 4606612.967,
+          "instructions": 20894386.334,
+          "wall_ns": 1084719
+        }
+      ],
+      "workload": "text",
+      "engine": "v2"
+    }
+  ]
+}

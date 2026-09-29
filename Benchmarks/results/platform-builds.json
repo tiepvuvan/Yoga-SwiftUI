@@ -1,0 +1,32 @@
+{
+  "source_sha256": "fdc9f00884bddb991c797da615d43b15ad9489cdbfe71eed33273beea4139f22",
+  "core_source_sha256": "0698f0133a28c84591a0d16fe6eb0f1596c8e01b0cff04591513a445a11e808e",
+  "checks": {
+    "iOS": {
+      "passed": true,
+      "destination": "generic/platform=iOS Simulator",
+      "log": "platform-ios.log"
+    },
+    "tvOS": {
+      "passed": true,
+      "destination": "generic/platform=tvOS Simulator",
+      "log": "platform-tvos.log"
+    },
+    "watchOS": {
+      "passed": true,
+      "destination": "generic/platform=watchOS Simulator",
+      "log": "platform-watchos.log"
+    },
+    "visionOS": {
+      "passed": true,
+      "destination": "generic/platform=visionOS Simulator",
+      "log": "platform-visionos.log"
+    },
+    "DocC": {
+      "passed": true,
+      "destination": "macOS",
+      "log": "platform-docc.log"
+    }
+  },
+  "documentation_warnings_as_errors": true
+}

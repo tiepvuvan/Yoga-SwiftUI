@@ -1,0 +1,97 @@
+Swift version 6.4 (swift-6.4-RELEASE)
+Target: aarch64-unknown-linux-gnu
+aarch64
+Building for production...
+[Planning deferred tasks]
+[36 / 55] Yoga
+/package/Tests/YogaTests/NodeLifecycleTests.swift:57:18: [1;33mwarning: [1;39mweak variable 'weakRoot' was never mutated; consider changing to 'let' constant[0;0m [#]8;;https://docs.swift.org/compiler/documentation/diagnostics/variable-never-mutated\VariableNeverMutated]8;;\::]8;;https://docs.swift.org/compiler/documentation/diagnostics/weak-mutability\WeakMutability]8;;\]
+ [0;36m55 |[0;0m         var root: YogaNode? = YogaNode()
+ [0;36m56 |[0;0m         let child = YogaNode()
+ [0;36m57 |[0;0m         weak var weakRoot = root
+    [0;36m|[0;0m                  `- [1;33mwarning: [1;39mweak variable 'weakRoot' was never mutated; consider changing to 'let' constant[0;0m [#]8;;https://docs.swift.org/compiler/documentation/diagnostics/variable-never-mutated\VariableNeverMutated]8;;\::]8;;https://docs.swift.org/compiler/documentation/diagnostics/weak-mutability\WeakMutability]8;;\]
+ [0;36m58 |[0;0m         root?.appendChild(child)
+ [0;36m59 |[0;0m         root?.calculateLayout(width: 100, height: 40)
+
+[#VariableNeverMutated]: <https://docs.swift.org/compiler/documentation/diagnostics/variable-never-mutated>
+[#WeakMutability]: <https://docs.swift.org/compiler/documentation/diagnostics/weak-mutability>
+[45 / 57] YogaTests-product
+[50 / 57] YogaTests-product
+[54 / 59] YogaTests-test-runner
+[59 / 59] YogaTests-test-runner
+Build complete! (10.55 secs)
+Test Suite 'All tests' started at 2026-09-29 08:21:00.268
+Test Suite 'Release-linux-aarch64.xctest' started at 2026-09-29 08:21:00.269
+Test Suite 'NodeLifecycleTests' started at 2026-09-29 08:21:00.269
+Test Case 'NodeLifecycleTests.testAutoPaddingAndGapRestoreGroupedFallbacks' started at 2026-09-29 08:21:00.269
+Test Case 'NodeLifecycleTests.testAutoPaddingAndGapRestoreGroupedFallbacks' passed (0.0 seconds)
+Test Case 'NodeLifecycleTests.testBaselineCallbackAlignsSiblings' started at 2026-09-29 08:21:00.269
+Test Case 'NodeLifecycleTests.testBaselineCallbackAlignsSiblings' passed (0.0 seconds)
+Test Case 'NodeLifecycleTests.testChangedRootProposalPreservesPixelRoundingOnCacheHits' started at 2026-09-29 08:21:00.269
+Test Case 'NodeLifecycleTests.testChangedRootProposalPreservesPixelRoundingOnCacheHits' passed (0.0 seconds)
+Test Case 'NodeLifecycleTests.testCompatibleMeasuredConstraintsReuseTheCallback' started at 2026-09-29 08:21:00.269
+Test Case 'NodeLifecycleTests.testCompatibleMeasuredConstraintsReuseTheCallback' passed (0.0 seconds)
+Test Case 'NodeLifecycleTests.testDisplayTransitionsInvalidateFlattenedChildren' started at 2026-09-29 08:21:00.270
+Test Case 'NodeLifecycleTests.testDisplayTransitionsInvalidateFlattenedChildren' passed (0.0 seconds)
+Test Case 'NodeLifecycleTests.testMeasuredContentInvalidationAndRepeatedLayout' started at 2026-09-29 08:21:00.270
+Test Case 'NodeLifecycleTests.testMeasuredContentInvalidationAndRepeatedLayout' passed (0.0 seconds)
+Test Case 'NodeLifecycleTests.testParentsDoNotFormRetainCycles' started at 2026-09-29 08:21:00.270
+Test Case 'NodeLifecycleTests.testParentsDoNotFormRetainCycles' passed (0.0 seconds)
+Test Case 'NodeLifecycleTests.testPercentageInsetsInvalidateWhenOnlyOwnerWidthChanges' started at 2026-09-29 08:21:00.270
+Test Case 'NodeLifecycleTests.testPercentageInsetsInvalidateWhenOnlyOwnerWidthChanges' passed (0.0 seconds)
+Test Case 'NodeLifecycleTests.testRemovalReparentingAndOwnership' started at 2026-09-29 08:21:00.270
+Test Case 'NodeLifecycleTests.testRemovalReparentingAndOwnership' passed (0.0 seconds)
+Test Case 'NodeLifecycleTests.testRetainedChildCanBecomeARootAfterItsParentIsReleased' started at 2026-09-29 08:21:00.270
+Test Case 'NodeLifecycleTests.testRetainedChildCanBecomeARootAfterItsParentIsReleased' passed (0.0 seconds)
+Test Case 'NodeLifecycleTests.testReusedTreeMatchesFreshLayoutAfterMutations' started at 2026-09-29 08:21:00.270
+Test Case 'NodeLifecycleTests.testReusedTreeMatchesFreshLayoutAfterMutations' passed (0.001 seconds)
+Test Case 'NodeLifecycleTests.testRoundedLayoutRemainsStableOnCacheHits' started at 2026-09-29 08:21:00.271
+Test Case 'NodeLifecycleTests.testRoundedLayoutRemainsStableOnCacheHits' passed (0.0 seconds)
+Test Case 'NodeLifecycleTests.testStylesAreValuesAndInvalidateAncestors' started at 2026-09-29 08:21:00.272
+Test Case 'NodeLifecycleTests.testStylesAreValuesAndInvalidateAncestors' passed (0.0 seconds)
+Test Suite 'NodeLifecycleTests' passed at 2026-09-29 08:21:00.272
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'StorageTests' started at 2026-09-29 08:21:00.272
+Test Case 'StorageTests.testCompactOptionalScalarsAndClearedEdgesPreserveValueSemantics' started at 2026-09-29 08:21:00.272
+Test Case 'StorageTests.testCompactOptionalScalarsAndClearedEdgesPreserveValueSemantics' passed (0.0 seconds)
+Test Case 'StorageTests.testContentsAndAbsoluteTransitionsRefreshFlow' started at 2026-09-29 08:21:00.272
+Test Case 'StorageTests.testContentsAndAbsoluteTransitionsRefreshFlow' passed (0.0 seconds)
+Test Case 'StorageTests.testGrowthAndReparentingPreserveValuesAndCallbacks' started at 2026-09-29 08:21:00.272
+Test Case 'StorageTests.testGrowthAndReparentingPreserveValuesAndCallbacks' passed (0.0 seconds)
+Test Case 'StorageTests.testLengthStoragePreservesUnitsAndValueSemantics' started at 2026-09-29 08:21:00.272
+Test Case 'StorageTests.testLengthStoragePreservesUnitsAndValueSemantics' passed (0.0 seconds)
+Test Case 'StorageTests.testRecycledStorageReleasesCallbacksAndOldStyles' started at 2026-09-29 08:21:00.272
+Test Case 'StorageTests.testRecycledStorageReleasesCallbacksAndOldStyles' passed (0.0 seconds)
+Test Suite 'StorageTests' passed at 2026-09-29 08:21:00.273
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'TreeLifecycleTests' started at 2026-09-29 08:21:00.273
+Test Case 'TreeLifecycleTests.testDetachedRootsPrepareIndependentTopology' started at 2026-09-29 08:21:00.273
+Test Case 'TreeLifecycleTests.testDetachedRootsPrepareIndependentTopology' passed (0.0 seconds)
+Test Case 'TreeLifecycleTests.testHandleDoesNotKeepTreeOrContentAlive' started at 2026-09-29 08:21:00.273
+Test Case 'TreeLifecycleTests.testHandleDoesNotKeepTreeOrContentAlive' passed (0.0 seconds)
+Test Case 'TreeLifecycleTests.testIdentifiersSurviveGrowthButRejectDeletionAndOtherOwners' started at 2026-09-29 08:21:00.273
+Test Case 'TreeLifecycleTests.testIdentifiersSurviveGrowthButRejectDeletionAndOtherOwners' passed (0.0 seconds)
+Test Case 'TreeLifecycleTests.testMeasurementInvalidationAndBaselineCallbacks' started at 2026-09-29 08:21:00.273
+Test Case 'TreeLifecycleTests.testMeasurementInvalidationAndBaselineCallbacks' passed (0.0 seconds)
+Test Case 'TreeLifecycleTests.testReparentingAndRemovalInvalidateDescendantHandles' started at 2026-09-29 08:21:00.273
+Test Case 'TreeLifecycleTests.testReparentingAndRemovalInvalidateDescendantHandles' passed (0.0 seconds)
+Test Case 'TreeLifecycleTests.testRepeatedGrowShrinkAndReusePreserveStaleHandleChecks' started at 2026-09-29 08:21:00.273
+Test Case 'TreeLifecycleTests.testRepeatedGrowShrinkAndReusePreserveStaleHandleChecks' passed (0.001 seconds)
+Test Suite 'TreeLifecycleTests' passed at 2026-09-29 08:21:00.274
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'UpstreamFixtureTests' started at 2026-09-29 08:21:00.274
+Test Case 'UpstreamFixtureTests.testAllGeneratedFixturesThroughTreeHandles' started at 2026-09-29 08:21:00.274
+YogaTree 3.2.1 conformance: 531/531 active fixtures, 15856 assertions; 17 disabled upstream
+Test Case 'UpstreamFixtureTests.testAllGeneratedFixturesThroughTreeHandles' passed (0.057 seconds)
+Test Case 'UpstreamFixtureTests.testAllGeneratedYoga321Fixtures' started at 2026-09-29 08:21:00.331
+Yoga 3.2.1 conformance: 531/531 active fixtures, 15856 assertions; 17 disabled upstream
+Test Case 'UpstreamFixtureTests.testAllGeneratedYoga321Fixtures' passed (0.057 seconds)
+Test Suite 'UpstreamFixtureTests' passed at 2026-09-29 08:21:00.388
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.114 (0.114) seconds
+Test Suite 'Release-linux-aarch64.xctest' passed at 2026-09-29 08:21:00.388
+	 Executed 26 tests, with 0 failures (0 unexpected) in 0.119 (0.119) seconds
+Test Suite 'All tests' passed at 2026-09-29 08:21:00.388
+	 Executed 26 tests, with 0 failures (0 unexpected) in 0.119 (0.119) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.4 (efd8d65801f569d)
+↳ Target Platform: aarch64-unknown-linux-gnu
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

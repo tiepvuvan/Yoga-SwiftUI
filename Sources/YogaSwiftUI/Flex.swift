@@ -1,5 +1,5 @@
 import SwiftUI
-import YogaBridge
+public import Yoga
 
 /// A SwiftUI container laid out by Yoga's flexbox engine.
 public struct Flex<Content: View>: View {
@@ -13,16 +13,16 @@ public struct Flex<Content: View>: View {
     /// Use `yoga...` modifiers on the container for additional Yoga properties.
     /// Apply `flex...` modifiers to direct children for item properties.
     public init(
-        direction: YGFlexDirection = .row,
-        justifyContent: YGJustify = .flexStart,
-        alignItems: YGAlign = .flexStart,
-        alignContent: YGAlign = .flexStart,
-        wrap: YGWrap = .noWrap,
+        direction: YogaFlexDirection = .row,
+        justifyContent: YogaJustify = .flexStart,
+        alignItems: YogaAlign = .flexStart,
+        alignContent: YogaAlign = .flexStart,
+        wrap: YogaWrap = .noWrap,
         rowGap: CGFloat = 0,
         columnGap: CGFloat = 0,
-        @ViewBuilder contentBuilder: @escaping () -> Content
+        @ViewBuilder contentBuilder: () -> Content
     ) {
-        var style = YogaStyle()
+        var style = YogaStyle(useWebDefaults: true)
         style.flexDirection = direction
         style.justifyContent = justifyContent
         style.alignItems = alignItems
@@ -46,9 +46,10 @@ public struct Flex<Content: View>: View {
         YogaFlexLayout(style: style, layoutDirection: yogaDirection) {
             content
         }
+        .modifier(YogaVisibility(display: style.display))
     }
 
-    private var yogaDirection: YGDirection {
+    private var yogaDirection: YogaDirection {
         switch layoutDirection {
         case .leftToRight: .LTR
         case .rightToLeft: .RTL

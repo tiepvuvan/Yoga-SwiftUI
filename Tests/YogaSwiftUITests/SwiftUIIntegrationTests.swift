@@ -1,9 +1,17 @@
-#if os(macOS)
 import SwiftUI
 import XCTest
 import YogaSwiftUI
 
 final class SwiftUIIntegrationTests: XCTestCase {
+    @MainActor func testChangedTextInvalidatesIntrinsicMeasurements() throws {
+        let renderer = ImageRenderer(content: ChangingText(title: "A"))
+        renderer.scale = 1
+        let before = try XCTUnwrap(renderer.cgImage).width
+        renderer.content = ChangingText(title: "A much longer title")
+        let after = try XCTUnwrap(renderer.cgImage).width
+        XCTAssertGreaterThan(after, before)
+    }
+
     @MainActor func testFlexPlacesSwiftUIChildren() throws {
         let view = Flex(direction: .row, justifyContent: .spaceBetween) {
             Rectangle().fill(.red).flexWidth(.point(20)).flexHeight(.point(20))
@@ -13,12 +21,10 @@ final class SwiftUIIntegrationTests: XCTestCase {
 
         let renderer = ImageRenderer(content: view)
         renderer.scale = 1
-        let image = try XCTUnwrap(renderer.nsImage)
-        let data = try XCTUnwrap(image.tiffRepresentation)
-        let bitmap = try XCTUnwrap(NSBitmapImageRep(data: data))
-        let left = try XCTUnwrap(bitmap.colorAt(x: 10, y: 10)?.usingColorSpace(.deviceRGB))
-        let middle = try XCTUnwrap(bitmap.colorAt(x: 50, y: 10)?.usingColorSpace(.deviceRGB))
-        let right = try XCTUnwrap(bitmap.colorAt(x: 90, y: 10)?.usingColorSpace(.deviceRGB))
+        let bitmap = try PixelImage(renderer.cgImage)
+        let left = try XCTUnwrap(bitmap.colorAt(x: 10, y: 10))
+        let middle = try XCTUnwrap(bitmap.colorAt(x: 50, y: 10))
+        let right = try XCTUnwrap(bitmap.colorAt(x: 90, y: 10))
         XCTAssertGreaterThan(left.redComponent, 0.9)
         XCTAssertGreaterThan(left.redComponent, left.blueComponent)
         XCTAssertLessThan(middle.alphaComponent, 0.1)
@@ -38,11 +44,9 @@ final class SwiftUIIntegrationTests: XCTestCase {
 
         let renderer = ImageRenderer(content: view)
         renderer.scale = 1
-        let image = try XCTUnwrap(renderer.nsImage)
-        let data = try XCTUnwrap(image.tiffRepresentation)
-        let bitmap = try XCTUnwrap(NSBitmapImageRep(data: data))
-        let inset = try XCTUnwrap(bitmap.colorAt(x: 5, y: 10)?.usingColorSpace(.deviceRGB))
-        let content = try XCTUnwrap(bitmap.colorAt(x: 15, y: 10)?.usingColorSpace(.deviceRGB))
+        let bitmap = try PixelImage(renderer.cgImage)
+        let inset = try XCTUnwrap(bitmap.colorAt(x: 5, y: 10))
+        let content = try XCTUnwrap(bitmap.colorAt(x: 15, y: 10))
 
         XCTAssertLessThan(inset.alphaComponent, 0.1)
         XCTAssertGreaterThan(content.redComponent, 0.9)
@@ -58,11 +62,9 @@ final class SwiftUIIntegrationTests: XCTestCase {
 
         let renderer = ImageRenderer(content: view)
         renderer.scale = 1
-        let image = try XCTUnwrap(renderer.nsImage)
-        let data = try XCTUnwrap(image.tiffRepresentation)
-        let bitmap = try XCTUnwrap(NSBitmapImageRep(data: data))
-        let gap = try XCTUnwrap(bitmap.colorAt(x: 25, y: 10)?.usingColorSpace(.deviceRGB))
-        let second = try XCTUnwrap(bitmap.colorAt(x: 35, y: 10)?.usingColorSpace(.deviceRGB))
+        let bitmap = try PixelImage(renderer.cgImage)
+        let gap = try XCTUnwrap(bitmap.colorAt(x: 25, y: 10))
+        let second = try XCTUnwrap(bitmap.colorAt(x: 35, y: 10))
 
         XCTAssertLessThan(gap.alphaComponent, 0.1)
         XCTAssertGreaterThan(second.blueComponent, 0.9)
@@ -84,14 +86,18 @@ final class SwiftUIIntegrationTests: XCTestCase {
 
         let renderer = ImageRenderer(content: view)
         renderer.scale = 1
-        let image = try XCTUnwrap(renderer.nsImage)
-        let data = try XCTUnwrap(image.tiffRepresentation)
-        let bitmap = try XCTUnwrap(NSBitmapImageRep(data: data))
-        let empty = try XCTUnwrap(bitmap.colorAt(x: 40, y: 35)?.usingColorSpace(.deviceRGB))
-        let positioned = try XCTUnwrap(bitmap.colorAt(x: 75, y: 35)?.usingColorSpace(.deviceRGB))
+        let bitmap = try PixelImage(renderer.cgImage)
+        let empty = try XCTUnwrap(bitmap.colorAt(x: 40, y: 35))
+        let positioned = try XCTUnwrap(bitmap.colorAt(x: 75, y: 35))
 
         XCTAssertLessThan(empty.alphaComponent, 0.1)
         XCTAssertGreaterThan(positioned.blueComponent, 0.9)
     }
 }
-#endif
+
+private struct ChangingText: View {
+    let title: String
+    var body: some View {
+        Flex { Text(title).font(.system(size: 12)) }
+    }
+}
